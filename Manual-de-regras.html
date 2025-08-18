@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manual de regras do NetWars - Aprenda como jogar o jogo educativo de redes de computadores">
+    <meta name="keywords" content="NetWars, regras, manual, jogo, redes de computadores, como jogar">
+    <meta name="author" content="R. Kauan & E. Filho">
+    <title>Manual de Regras - NetWars</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="Images/Logo.png" type="image/png">
+</head>
+
+<body>
+    <header>
+        <nav class="menu" role="navigation" aria-label="Menu principal">
+            <a href="index.html" class="logo" aria-label="Página inicial NetWars">
+                <img class="logo-img" src="Images/Logo.png" alt="Logo NetWars">
+            </a>
+            <div class="mobile-menu" aria-label="Menu mobile" role="button" tabindex="0">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="Manual-de-regras.html" aria-current="page">Regras</a></li>
+                <li><a href="cartas.html">Cartas</a></li>
+                <li><a href="#materiais">Materiais físicos</a></li>
+                <li><a href="#estudo">Materiais para estudo</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contato" class="Contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="regras" aria-labelledby="regras-titulo">
+            <section class="bg-1-2">
+                <h1 id="regras-titulo">Manual de Regras – NetWars</h1>
+
+                <div class="primeiro">
+                    <div class="barra-vertical" aria-hidden="true"></div>
+                    <h2>1. Objetivo do Jogo</h2>
+                    <p>O principal objetivo do NetWars é que cada jogador <strong>cumpra uma missão</strong> específica
+                        ao controlar
+                        determinados switches dentro de uma rede. O jogo é competitivo, e vence aquele que conseguir
+                        completar sua missão primeiro. Para isso, será necessário usar estratégia, responder
+                        corretamente às perguntas propostas e saber administrar seus recursos de forma inteligente.</p>
+                </div>
+
+                <div class="segundo">
+                    <div class="barra-vertical" aria-hidden="true"></div>
+                    <h2>2. Preparação Inicial</h2>
+                    
+                    <h3>2.1. Antes de iniciar a partida</h3>
+                    <p>Cada jogador deve <strong>escolher uma cor</strong> que o representará ao longo do jogo.
+                        Em seguida, <strong>os pacotes iniciais são distribuídos</strong> proporcionalmente à quantidade
+                        de
+                        participantes, garantindo equilíbrio entre todos os jogadores.
+                        <br><br>
+                        Os switches/territórios disponíveis no tabuleiro são distribuídos de forma alternada, recebendo
+                        inicialmente um pacote cada. Após essa distribuição inicial, os pacotes restantes são alocados
+                        livremente pelos jogadores em switches que já controlam, de acordo com suas estratégias.</p>
+                    
+                    <div class="peças" aria-label="Peças do jogo">
+                        <img src="Images/verde.png" alt="Peça verde" >
+                        <img src="Images/vermelho.png" alt="Peça vermelha" >
+                        <img src="Images/azul.png" alt="Peça azul" >
+                        <img src="Images/preto.png" alt="Peça preta" >
+                        <img src="Images/marrom.png" alt="Peça marrom" >
+                    </div>
+
+                    <h3>2.2. Distribuição de Cartas:</h3>
+                    <p><strong>As cartas de território (Territory Card)</strong> são embaralhadas e distribuídas
+                        igualmente entre os
+                        jogadores. Elas definem quais switches iniciais pertencem a cada um, garantindo que todos
+                        comecem
+                        com uma base de operação clara.</p>
+
+                    <div class="cartas" aria-label="Cartas de território">
+                        <img src="Images/0902beec80a35813504659446192507b854ff5df.png" alt="Carta de território 1">
+                        <img src="Images/6b91e1142d0de190b86990e9d95d1c739c148865.png" alt="Carta de território 2">
+                        <img src="Images/0902beec80a35813504659446192507b854ff5df.png" alt="Carta de território 3">
+                        <img src="Images/043b1ae2a45dcea8bfb258c2001e0e9d6201b0cd.png" alt="Carta de território 4">
+                    </div>
+
+                    <p><strong>As cartas de objetivo (Object Card) também são embaralhadas.</strong> Cada jogador
+                        recebe uma carta de
+                        missão
+                        secreta, que define seu objetivo para vencer a partida. Essa carta não pode ser revelada aos
+                        demais,
+                        a menos que seja cumprida com sucesso.</p>
+
+                    <div class="cartas" aria-label="Cartas de objetivo">
+                        <img src="Images/Obeject Card.png" alt="Carta de objetivo 1">
+                        <img src="Images/seuobjetivo.png" alt="Carta de objetivo 2">
+                        <img src="Images/Obeject Card.png" alt="Carta de objetivo 3">
+                        <img src="Images/seuobjetivo2.png" alt="Carta de objetivo 4">
+                    </div>
+                </div>
+            </section>
+
+            <section class="aba3">
+                <div class="terceiro">
+                    <div class="barra-vertical" aria-hidden="true"></div>
+                    <h2>3. Estrutura dos Turnos</h2>
+                    
+                    <h3>3.1. Fase de Reforço</h3>
+                    <p>Durante esta fase, o jogador <strong>recebe pacotes adicionais</strong> com base no número de
+                        switches que
+                        controla. A quantidade é determinada pela <strong>divisão do número total de switches por
+                            dois</strong>, sendo o resultado
+                        arredondado para baixo. <br><br>
+                        Além disso, caso um jogador controle todos os switches de um mesmo segmento (ou "continente"),
+                        ele recebe <strong>pacotes extras como bônus</strong>. Esses reforços podem ser posicionados em
+                        qualquer switch que
+                        esteja sob o controle do jogador, o que permite flexibilidade estratégica.</p>
+
+                    <h3>3.2. Fase de Ataque</h3>
+                    <p>Nesta fase, o jogador pode <strong>atacar switches adjacentes,</strong> desde que o switch de
+                        origem possua pelo
+                        menos dois pacotes. Para realizar um ataque, o jogador atacante precisa responder corretamente a
+                        uma <strong>carta de pergunta (Question Card)</strong></p>
+
+                    <div class="cartas" aria-label="Cartas de pergunta">
+                        <img src="Images/image 10.png" alt="Carta de pergunta 1">
+                        <img src="Images/image 12.png" alt="Carta de pergunta 2">
+                        <img src="Images/image 11.png" alt="Carta de pergunta 3">
+                        <img src="Images/image 13.png" alt="Carta de pergunta 4">
+                    </div>
+
+                    <p>Se a resposta estiver correta, o defensor então também deve responder a uma Carta de Defesa
+                        <strong>(Defense Card)</strong></p>
+                    
+                    <ul class="ahaha">
+                        <li>
+                            <strong>Defensor acertou:</strong> Mantém o controle do switch atacado.
+                        </li>
+                        <li>
+                            <strong>Defensor errou:</strong> Perde o switch, e o atacante assume o controle, podendo
+                            mover pacotes para o
+                            local conquistado.
+                        </li>
+                    </ul>
+                    
+                    <p>O jogador pode continuar atacando quantas vezes desejar, desde que ainda possua pelo menos dois
+                        pacotes em seus switches</p>
+
+                    <h3>3.3. Fase de Reagrupamento</h3>
+                    <p>Ao final do turno, o jogador tem a opção de mover pacotes entre switches que já controla e que
+                        estejam conectados diretamente. Esse movimento é limitado a uma única ação de reagrupamento por
+                        turno, o que exige planejamento criterioso.</p>
+                </div>
+            </section>
+
+            <section class="aba4">
+                <div class="quarto">
+                    <div class="barra-vertical" aria-hidden="true"></div>
+                    <h2>4. Cartas de Defesa e Peças Especiais</h2>
+                    <p>Durante a partida, os jogadores poderão adquirir Cartas de Defesa (Defense Card), porém essas só
+                        podem ser obtidas mediante a troca de duas peças de satélite iguais. Não há reposição automática
+                        dessas cartas, tornando-as recursos valiosos que devem ser usados com sabedoria.</p>
+
+                    <div class="cartas" aria-label="Cartas de defesa">
+                        <img src="Images/image 14.png" alt="Carta de defesa 1">
+                        <img src="Images/image 15.png" alt="Carta de defesa 2">
+                        <img src="Images/image 17.png" alt="Carta de defesa 3">
+                        <img src="Images/image 16.png" alt="Carta de defesa 4">
+                    </div>
+
+                    <p>Pode-se montar um Satélite também, que é uma peça especial formada pela combinação de quatro
+                        peças
+                        de satélite diferentes. Ao completar um satélite, o jogador ganha acesso a um ataque orbital,
+                        uma
+                        ação ofensiva de grande impacto que pode alterar o rumo da partida. É uma escolha estratégica
+                        que
+                        exige planejamento e atenção ao momento certo de usá-lo.</p>
+
+                    <div class="cartas" aria-label="Peças de satélite">
+                        <img src="Images/ChatGPT_Image_16_de_abr._de_2025__17_10_32-removebg-preview 1.png" alt="Peça de satélite 1">
+                        <img src="Images/ChatGPT_Image_16_de_abr._de_2025__17_10_32-removebg-preview 2.png" alt="Peça de satélite 2">
+                        <img src="Images/ChatGPT_Image_16_de_abr._de_2025__17_10_32-removebg-preview 3.png" alt="Peça de satélite 3">
+                        <img src="Images/ChatGPT_Image_16_de_abr._de_2025__17_10_32-removebg-preview 4.png" alt="Peça de satélite 4">
+                    </div>
+
+                    <p>As Peças de Satélite são obtidas através das Cartas de Território (Territory Card), que são
+                        obtidas
+                        ao conquistar switches, mas cada jogador só pode receber uma por rodada. Isso impõe um ritmo
+                        estratégico ao jogo, valorizando cada conquista.</p>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="rodape-final">
+        <p>© 2025 NetWars – Todos os direitos reservados.
+            <br>
+            Criadores: R. Kauan & E. Filho | Apoio: FAPEMA & IFMA
+        </p>
+    </footer>
+
+    <script src="mobile-navbar.js"></script>
+</body>
+
+</html>
