@@ -5,10 +5,25 @@ class MobileNavbar {
     this.navLinks = document.querySelectorAll(navLinks);
     this.activeClass = "active";
     this.isOpen = false;
+    
+    // Criar overlay se não existir
+    this.createOverlay();
 
     this.handleClick = this.handleClick.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
+  }
+
+  createOverlay() {
+    // Verificar se já existe um overlay
+    if (!document.querySelector('.menu-overlay')) {
+      this.overlay = document.createElement('div');
+      this.overlay.className = 'menu-overlay';
+      this.overlay.addEventListener('click', this.handleClick);
+      document.body.appendChild(this.overlay);
+    } else {
+      this.overlay = document.querySelector('.menu-overlay');
+    }
   }
 
   animateLinks() {
@@ -27,6 +42,7 @@ class MobileNavbar {
     this.isOpen = !this.isOpen;
     this.navList.classList.toggle(this.activeClass);
     this.mobileMenu.classList.toggle(this.activeClass);
+    this.overlay.classList.toggle(this.activeClass);
     this.animateLinks();
     
     // Atualizar aria-expanded para acessibilidade
@@ -36,9 +52,13 @@ class MobileNavbar {
     if (this.isOpen) {
       document.addEventListener('click', this.handleOutsideClick);
       document.addEventListener('keydown', this.handleEscapeKey);
+      // Prevenir scroll do body
+      document.body.style.overflow = 'hidden';
     } else {
       document.removeEventListener('click', this.handleOutsideClick);
       document.removeEventListener('keydown', this.handleEscapeKey);
+      // Restaurar scroll do body
+      document.body.style.overflow = '';
     }
   }
 
@@ -58,7 +78,8 @@ class MobileNavbar {
   handleOutsideClick = (event) => {
     if (this.isOpen && 
         !this.mobileMenu.contains(event.target) && 
-        !this.navList.contains(event.target)) {
+        !this.navList.contains(event.target) &&
+        !this.overlay.contains(event.target)) {
       this.handleClick();
     }
   }
