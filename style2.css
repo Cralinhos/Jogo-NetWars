@@ -211,9 +211,9 @@ a:hover {
     content: '';
     position: absolute;
     top: 14px;
-    left: 168px;
+    left: -16px;
     width: 2px;
-    height: 1150px;
+    height: 230px;
     background-color: white;
     border-radius: 3px;
 }
@@ -223,7 +223,7 @@ a:hover {
     content: '';
     position: absolute;
     top: 14px;
-    left: 168px;
+    left: -16px;
     width: 2px;
     height: 440px;
     background-color: white;
