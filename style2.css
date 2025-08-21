@@ -485,7 +485,7 @@ a:hover {
     content: '';
     position: absolute;
     top: 14px;
-    left: -16px;
+    left: -28px;
     width: 2px;
     height: 230px;
     background-color: white;
@@ -497,9 +497,9 @@ a:hover {
     content: '';
     position: absolute;
     top: 14px;
-    left: -16px;
+    left: -28px;
     width: 2px;
-    height: 1920px;
+    height: 1850px;
     background-color: white;
     border-radius: 3px;
 }
