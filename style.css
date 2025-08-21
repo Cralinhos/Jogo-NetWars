@@ -164,7 +164,7 @@ a:hover {
     padding: 0 20px;
     margin: 0 auto;
     min-height: 60vh;
-    margin-top: -330px;
+    margin-top: -300px;
 }
 
 .titulo {
@@ -624,7 +624,7 @@ a:hover {
         padding: 15px 10px;
         min-height: 30vh;
         max-width: 100%;
-        margin-top: 350px;
+        margin-top: 330px;
     }
 
     .titulo {
@@ -1025,4 +1025,260 @@ a:hover {
     .nav-list.active li:nth-child(5) { transition-delay: 0.5s; }
     .nav-list.active li:nth-child(6) { transition-delay: 0.6s; }
     .nav-list.active li:nth-child(7) { transition-delay: 0.7s; }
+}
+
+/* Otimizações específicas para telas ultrawide (2340 x 1080) */
+@media (min-width: 2000px) and (max-width: 2500px) {
+    body {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+    
+    /* Header otimizado para telas ultrawide */
+    .menu {
+        height: 10vh;
+        padding: 15px 40px;
+    }
+    
+    .logo .logo-img {
+        width: 180px;
+    }
+    
+    .nav-list li {
+        margin-left: 40px;
+        font-size: 18px;
+        letter-spacing: 4px;
+    }
+    
+    .Contato {
+        padding: 12px 24px;
+        font-size: 18px;
+        border-radius: 12px;
+    }
+    
+    /* Seção Inicial otimizada */
+    .Inicio {
+        min-height: 140vh;
+        padding-top: 80px;
+    }
+    
+    .main-text {
+        padding: 35px 25px;
+        min-height: 45vh;
+        max-width: 1100px;
+    }
+    
+    .titulo {
+        font-size: 26px;
+    }
+    
+    .textomenor {
+        font-size: 14px;
+    }
+    
+    .barra {
+        width: 350px;
+    }
+    
+    /* Seção Explicação do Jogo otimizada */
+    .explicacao-jogo {
+        padding: 60px 80px;
+        gap: 60px;
+    }
+    
+    .imagem1 .aimagem {
+        width: 400px;
+    }
+    
+    .logo-imagem .imagem-logo {
+        width: 280px;
+        margin: 0 auto;
+        bottom: 70px;
+    }
+    
+    .texto-logo p {
+        font-size: 28px;
+        bottom: 160px;
+        max-width: 700px;
+        text-align: center;
+    }
+    
+    /* Seção Objetivos otimizada */
+    .objetivos h2 {
+        font-size: 80px;
+        padding: 30px;
+    }
+    
+    .objetivos h3 {
+        font-size: 40px;
+    }
+    
+    .objetivos p {
+        font-size: 22px;
+    }
+    
+    .objetivos div {
+        margin-left: 100px;
+        margin-right: 100px;
+        max-width: 1600px;
+    }
+    
+    /* Seção FAQ otimizada */
+    .faq h2 {
+        font-size: 80px;
+        padding: 30px;
+    }
+    
+    .faq h3 {
+        font-size: 40px;
+    }
+    
+    .faq p {
+        font-size: 22px;
+        max-width: 1600px;
+    }
+    
+    .faq div {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    
+    .barra-lateral {
+        right: 100px;
+        width: calc(100% - 200px);
+    }
+    
+    /* Rodapé otimizado */
+    .rodape-final {
+        font-size: 22px;
+        min-height: 12vh;
+    }
+}
+
+/* Otimizações para telas muito grandes (acima de 2500px) */
+@media (min-width: 2500px) {
+    body {
+        font-size: 20px;
+        line-height: 1.8;
+    }
+    
+    /* Header para telas muito grandes */
+    .menu {
+        height: 8vh;
+        padding: 20px 60px;
+    }
+    
+    .logo .logo-img {
+        width: 200px;
+    }
+    
+    .nav-list li {
+        margin-left: 50px;
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+    
+    .Contato {
+        padding: 15px 30px;
+        font-size: 20px;
+        border-radius: 15px;
+    }
+    
+    /* Seção Inicial para telas muito grandes */
+    .Inicio {
+        min-height: 160vh;
+        padding-top: 100px;
+    }
+    
+    .main-text {
+        padding: 40px 30px;
+        min-height: 50vh;
+        max-width: 1200px;
+    }
+    
+    .titulo {
+        font-size: 30px;
+    }
+    
+    .textomenor {
+        font-size: 16px;
+    }
+    
+    .barra {
+        width: 400px;
+    }
+    
+    /* Seção Explicação do Jogo para telas muito grandes */
+    .explicacao-jogo {
+        padding: 80px 100px;
+        gap: 80px;
+    }
+    
+    .imagem1 .aimagem {
+        width: 450px;
+    }
+    
+    .logo-imagem .imagem-logo {
+        width: 320px;
+        margin: 0 auto;
+        bottom: 80px;
+    }
+    
+    .texto-logo p {
+        font-size: 32px;
+        bottom: 180px;
+        max-width: 800px;
+        text-align: center;
+    }
+    
+    /* Seção Objetivos para telas muito grandes */
+    .objetivos h2 {
+        font-size: 90px;
+        padding: 40px;
+    }
+    
+    .objetivos h3 {
+        font-size: 44px;
+    }
+    
+    .objetivos p {
+        font-size: 24px;
+    }
+    
+    .objetivos div {
+        margin-left: 120px;
+        margin-right: 120px;
+        max-width: 1800px;
+    }
+    
+    /* Seção FAQ para telas muito grandes */
+    .faq h2 {
+        font-size: 90px;
+        padding: 40px;
+    }
+    
+    .faq h3 {
+        font-size: 44px;
+    }
+    
+    .faq p {
+        font-size: 24px;
+        max-width: 1800px;
+    }
+    
+    .faq div {
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+    
+    .barra-lateral {
+        right: 120px;
+        width: calc(100% - 240px);
+    }
+    
+    /* Rodapé para telas muito grandes */
+    .rodape-final {
+        font-size: 26px;
+        min-height: 14vh;
+    }
 }

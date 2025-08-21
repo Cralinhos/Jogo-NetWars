@@ -134,6 +134,280 @@ a:hover {
     }
 }
 
+/* Otimizações específicas para telas ultrawide (2340 x 1080) */
+@media (min-width: 2000px) and (max-width: 2500px) {
+    body {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+    
+    /* Header otimizado para telas ultrawide */
+    .menu {
+        height: 10vh;
+        padding: 15px 40px;
+    }
+    
+    .logo .logo-img {
+        width: 180px;
+    }
+    
+    .nav-list li {
+        margin-left: 40px;
+        font-size: 18px;
+        letter-spacing: 4px;
+    }
+    
+    .Contato {
+        padding: 12px 24px;
+        font-size: 18px;
+        border-radius: 12px;
+    }
+    
+    /* Seção Regras otimizada */
+    .regras h1 {
+        font-size: 120px;
+        padding: 50px;
+        margin-bottom: 20px;
+    }
+    
+    .regras h2 {
+        font-size: 56px;
+        margin-bottom: 25px;
+    }
+    
+    .regras h3 {
+        font-size: 38px;
+        margin-bottom: 20px;
+    }
+    
+    .regras p {
+        font-size: 28px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        max-width: 1600px;
+    }
+    
+    .regras div {
+        margin-left: 300px;
+        margin-right: 300px;
+        margin-bottom: 50px;
+        max-width: 1800px;
+    }
+    
+    /* Estrutura das seções otimizada */
+    .primeiro,
+    .segundo,
+    .terceiro,
+    .quarto {
+        margin-bottom: 50px;
+        max-width: 1800px;
+    }
+    
+    /* Barras verticais ajustadas */
+    .primeiro::before,
+    .segundo::before,
+    .terceiro::before,
+    .quarto::before {
+        width: 3px;
+        height: 180px;
+        left: -20px;
+    }
+    
+    /* Espaçamento melhorado */
+    .regras {
+        padding: 80px 0;
+    }
+    
+    /* Melhor aproveitamento do espaço horizontal */
+    .regras h1,
+    .regras h2,
+    .regras h3,
+    .regras p {
+        text-align: center;
+    }
+    
+    /* Container centralizado com largura máxima */
+    .regras > div {
+        margin: 0 auto;
+        padding: 0 100px;
+    }
+    
+    /* Rodapé otimizado */
+    .rodape-final {
+        font-size: 30px;
+        padding: 30px;
+        min-height: 15vh;
+    }
+    
+    /* Seções de abas otimizadas */
+    .aba3,
+    .aba4 {
+        padding: 60px 0;
+    }
+    
+    /* Melhor aproveitamento do espaço */
+    .bg-1-2 {
+        padding: 60px 0;
+    }
+    
+    /* Seções de peças e cartas otimizadas */
+    .peças,
+    .cartas {
+        gap: 30px;
+        padding: 80px;
+        max-width: 2000px;
+        margin: 0 auto;
+    }
+    
+    .peças img {
+        width: 200px;
+    }
+    
+    .cartas img {
+        width: 350px;
+    }
+    
+    /* Melhor espaçamento para hover */
+    .peças img:hover,
+    .cartas img:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Otimizações para telas muito grandes (acima de 2500px) */
+@media (min-width: 2500px) {
+    body {
+        font-size: 20px;
+        line-height: 1.8;
+    }
+    
+    /* Header para telas muito grandes */
+    .menu {
+        height: 8vh;
+        padding: 20px 60px;
+    }
+    
+    .logo .logo-img {
+        width: 200px;
+    }
+    
+    .nav-list li {
+        margin-left: 50px;
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+    
+    .Contato {
+        padding: 15px 30px;
+        font-size: 20px;
+        border-radius: 15px;
+    }
+    
+    /* Seção Regras para telas muito grandes */
+    .regras h1 {
+        font-size: 140px;
+        padding: 60px;
+        margin-bottom: 30px;
+    }
+    
+    .regras h2 {
+        font-size: 64px;
+        margin-bottom: 30px;
+    }
+    
+    .regras h3 {
+        font-size: 42px;
+        margin-bottom: 25px;
+    }
+    
+    .regras p {
+        font-size: 32px;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        max-width: 2000px;
+    }
+    
+    .regras div {
+        margin-left: 400px;
+        margin-right: 400px;
+        margin-bottom: 60px;
+        max-width: 2200px;
+    }
+    
+    /* Estrutura das seções */
+    .primeiro,
+    .segundo,
+    .terceiro,
+    .quarto {
+        margin-bottom: 60px;
+        max-width: 2200px;
+    }
+    
+    /* Barras verticais */
+    .primeiro::before,
+    .segundo::before,
+    .terceiro::before,
+    .quarto::before {
+        width: 4px;
+        height: 200px;
+        left: -25px;
+    }
+    
+    /* Espaçamento */
+    .regras {
+        padding: 100px 0;
+    }
+    
+    /* Container centralizado */
+    .regras > div {
+        margin: 0 auto;
+        padding: 0 150px;
+    }
+    
+    /* Rodapé para telas muito grandes */
+    .rodape-final {
+        font-size: 36px;
+        padding: 40px;
+        min-height: 18vh;
+    }
+    
+    /* Seções de abas */
+    .aba3,
+    .aba4 {
+        padding: 80px 0;
+    }
+    
+    /* Melhor aproveitamento do espaço */
+    .bg-1-2 {
+        padding: 80px 0;
+    }
+    
+    /* Seções de peças e cartas para telas muito grandes */
+    .peças,
+    .cartas {
+        gap: 40px;
+        padding: 100px;
+        max-width: 2500px;
+        margin: 0 auto;
+    }
+    
+    .peças img {
+        width: 250px;
+    }
+    
+    .cartas img {
+        width: 400px;
+    }
+    
+    /* Efeitos hover aprimorados */
+    .peças img:hover,
+    .cartas img:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    }
+}
+
 /* Overlay do menu mobile */
 .menu-overlay {
     position: fixed;
@@ -225,7 +499,7 @@ a:hover {
     top: 14px;
     left: -16px;
     width: 2px;
-    height: 440px;
+    height: 1920px;
     background-color: white;
     border-radius: 3px;
 }
@@ -281,7 +555,6 @@ a:hover {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding: 50px;
     flex-wrap: wrap;
     max-width: 100%;
     overflow-x: auto;

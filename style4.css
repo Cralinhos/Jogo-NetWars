@@ -725,3 +725,185 @@
         }
     }
 }
+
+/* Otimizações específicas para telas ultrawide (2340 x 1080) */
+@media (min-width: 2000px) and (max-width: 2500px) {
+    body {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+    
+    /* Header otimizado para telas ultrawide */
+    .menu {
+        height: 10vh;
+        padding: 15px 40px;
+    }
+    
+    .logo .logo-img {
+        width: 180px;
+    }
+    
+    .nav-list li {
+        margin-left: 40px;
+        font-size: 18px;
+        letter-spacing: 4px;
+    }
+    
+    .Contato {
+        padding: 12px 24px;
+        font-size: 18px;
+        border-radius: 12px;
+    }
+    
+    /* Seção Materiais Físicos otimizada */
+    .regras h1 {
+        font-size: 120px;
+        padding: 50px;
+        margin-bottom: 20px;
+    }
+    
+    .regras h2 {
+        font-size: 56px;
+        margin-bottom: 25px;
+    }
+    
+    .regras h3 {
+        font-size: 38px;
+        margin-bottom: 20px;
+    }
+    
+    .regras p {
+        font-size: 28px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        max-width: 1600px;
+    }
+    
+    .regras div {
+        margin-left: 300px;
+        margin-right: 300px;
+        margin-bottom: 50px;
+        max-width: 1800px;
+    }
+    
+    /* Seções de peças otimizadas */
+    .peças {
+        gap: 30px;
+        padding: 80px;
+        max-width: 2000px;
+        margin: 0 auto;
+    }
+    
+    .peças img {
+        width: 200px;
+    }
+    
+    /* Melhor espaçamento para hover */
+    .peças img:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Rodapé otimizado */
+    .rodape-final {
+        font-size: 30px;
+        padding: 30px;
+        min-height: 15vh;
+    }
+    
+    /* Seções de fundo otimizadas */
+    .bg-1-2 {
+        padding: 60px 0;
+    }
+}
+
+/* Otimizações para telas muito grandes (acima de 2500px) */
+@media (min-width: 2500px) {
+    body {
+        font-size: 20px;
+        line-height: 1.8;
+    }
+    
+    /* Header para telas muito grandes */
+    .menu {
+        height: 8vh;
+        padding: 20px 60px;
+    }
+    
+    .logo .logo-img {
+        width: 200px;
+    }
+    
+    .nav-list li {
+        margin-left: 50px;
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+    
+    .Contato {
+        padding: 15px 30px;
+        font-size: 20px;
+        border-radius: 15px;
+    }
+    
+    /* Seção Materiais Físicos para telas muito grandes */
+    .regras h1 {
+        font-size: 140px;
+        padding: 60px;
+        margin-bottom: 30px;
+    }
+    
+    .regras h2 {
+        font-size: 64px;
+        margin-bottom: 30px;
+    }
+    
+    .regras h3 {
+        font-size: 42px;
+        margin-bottom: 25px;
+    }
+    
+    .regras p {
+        font-size: 32px;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        max-width: 2000px;
+    }
+    
+    .regras div {
+        margin-left: 400px;
+        margin-right: 400px;
+        margin-bottom: 60px;
+        max-width: 2200px;
+    }
+    
+    /* Seções de peças para telas muito grandes */
+    .peças {
+        gap: 40px;
+        padding: 100px;
+        max-width: 2500px;
+        margin: 0 auto;
+    }
+    
+    .peças img {
+        width: 250px;
+    }
+    
+    /* Efeitos hover aprimorados */
+    .peças img:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    }
+    
+    /* Rodapé para telas muito grandes */
+    .rodape-final {
+        font-size: 36px;
+        padding: 40px;
+        min-height: 18vh;
+    }
+    
+    /* Seções de fundo para telas muito grandes */
+    .bg-1-2 {
+        padding: 80px 0;
+    }
+}
