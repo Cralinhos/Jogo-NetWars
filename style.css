@@ -249,6 +249,7 @@ a:hover {
     font-size: 25px;
     font-weight: 200;
     line-height: 1.5;
+    max-width: 96%;
 }
 
 .objetivos div {
@@ -576,7 +577,9 @@ a:hover {
     }
 
     .logo-imagem .imagem-logo {
-        width: 200px;
+        width: 100%;
+        margin-bottom: -100px;
+        margin-top: -100px;
     }
 
     .texto-logo p {
@@ -636,7 +639,9 @@ a:hover {
     }
 
     .logo-imagem .imagem-logo {
-        width: 180px;
+        width: 100%;
+        margin-bottom: -100px;
+        margin-top: -100px;
     }
 
     .texto-logo p {

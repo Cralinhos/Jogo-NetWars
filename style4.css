@@ -103,6 +103,25 @@
      transform: rotate(45deg) translate(-5px, -7px);
  }
 
+ /* Overlay do menu mobile */
+ .menu-overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.5);
+     z-index: 999;
+     opacity: 0;
+     visibility: hidden;
+     transition: all 0.3s ease;
+ }
+
+ .menu-overlay.active {
+     opacity: 1;
+     visibility: visible;
+ }
+
  /* Seção Regras */
  .regras {
      color: white;
@@ -176,6 +195,14 @@
      border-radius: 3px;
  }
 
+ @media (max-width: 999px) {
+
+     .primeiro::before,
+     .segundo::before {
+         display: none;
+     }
+ }
+
  /* Imagens e cartas */
  .cartas {
      display: flex;
@@ -195,21 +222,47 @@
      align-items: center;
      gap: 20px;
      padding: 50px;
-     flex-wrap: nowrap;
+     flex-wrap: wrap;
      max-width: 100%;
      overflow-x: auto;
-     min-width: 1200px;
  }
 
-
  .mapa img {
-     width: 1275.35986328125px;
+     max-width: 100%;
      height: auto;
      object-fit: contain;
      border-radius: 8px;
      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
      transition: transform 0.3s ease, box-shadow 0.3s ease;
      flex-shrink: 0;
+ }
+
+ @media (max-width: 1200px) {
+     .mapa {
+         padding: 40px;
+         gap: 15px;
+     }
+ }
+
+ @media (max-width: 999px) {
+     .mapa {
+         padding: 30px 20px;
+         gap: 15px;
+     }
+ }
+
+ @media (max-width: 768px) {
+     .mapa {
+         padding: 20px 15px;
+         gap: 10px;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .mapa {
+         padding: 15px 10px;
+         gap: 8px;
+     }
  }
 
  .peças,
@@ -219,10 +272,9 @@
      align-items: center;
      gap: 20px;
      padding: 50px;
-     flex-wrap: nowrap;
+     flex-wrap: wrap;
      max-width: 100%;
      overflow-x: auto;
-     min-width: 1200px;
  }
 
  .cartas img {
@@ -300,31 +352,65 @@
      .cartas img {
          width: 220px;
      }
+
+     .btn-cartas {
+         width: 80%;
+         max-width: 400px;
+         font-size: 24px;
+     }
  }
 
  @media (max-width: 999px) {
      .nav-list {
-         position: absolute;
-         top: 8vh;
+         position: fixed;
+         top: 0;
          right: 0;
-         width: 50vw;
-         height: 92vh;
+         width: 100%;
+         height: 100vh;
          background: #1B004D;
          flex-direction: column;
          align-items: center;
-         justify-content: space-around;
+         justify-content: center;
          transform: translateX(100%);
-         transition: transform 0.3s ease-in;
+         transition: all 0.3s ease-in-out;
          z-index: 1000;
+         opacity: 0;
+         visibility: hidden;
      }
 
      .nav-list.active {
          transform: translateX(0);
+         opacity: 1;
+         visibility: visible;
      }
 
      .nav-list li {
-         margin-left: 0;
+         margin: 20px 0;
          opacity: 0;
+         transform: translateX(50px);
+         transition: all 0.3s ease-in-out;
+     }
+
+     .nav-list.active li {
+         opacity: 1;
+         transform: translateX(0);
+     }
+
+     .nav-list li a {
+         font-size: 18px;
+         padding: 15px 20px;
+         display: block;
+         width: 100%;
+         text-align: center;
+         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+     }
+
+     .nav-list li a:hover {
+         background-color: rgba(255, 255, 255, 0.1);
+     }
+
+     .nav-list li:last-child a {
+         border-bottom: none;
      }
 
      .mobile-menu {
@@ -339,6 +425,7 @@
      .regras h2 {
          font-size: 34px;
          text-align: center;
+         margin-left: 0;
      }
 
      .regras h3 {
@@ -349,6 +436,7 @@
      .regras p {
          font-size: 20px;
          text-align: center;
+         margin-left: 0;
      }
 
      .regras div {
@@ -369,6 +457,7 @@
          gap: 15px;
          flex-wrap: wrap;
          justify-content: center;
+         min-width: auto;
      }
 
      .peças img,
@@ -399,6 +488,13 @@
          height: auto;
          min-height: 13vh;
      }
+
+     .btn-cartas {
+         width: 90%;
+         max-width: 350px;
+         font-size: 20px;
+         height: 50px;
+     }
  }
 
  @media (max-width: 768px) {
@@ -416,6 +512,13 @@
      .peças img,
      .cartas img {
          width: 150px;
+     }
+
+     .btn-cartas {
+         width: 95%;
+         max-width: 300px;
+         font-size: 18px;
+         height: 45px;
      }
  }
 
@@ -455,6 +558,13 @@
      .rodape-final {
          font-size: 16px;
      }
+
+     .btn-cartas {
+         width: 95%;
+         max-width: 280px;
+         font-size: 16px;
+         height: 40px;
+     }
  }
 
 
@@ -473,96 +583,145 @@
      font-family: "Lilita One", sans-serif;
      font-size: 31px;
      font-weight: 400;
-
+     transition: all 0.3s ease;
+     cursor: pointer;
  }
 
- /* Manter layout Desktop em telas menores (posições iguais) */
+ .btn-cartas:hover {
+     background-color: #005a8a;
+     transform: translateY(-2px);
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ }
+
+ .btn-cartas a {
+     width: 100%;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-decoration: none;
+     color: inherit;
+ }
+
+ /* Melhorias adicionais para responsividade */
  @media (max-width: 999px) {
-     .nav-list {
-         position: static;
-         top: auto;
-         right: auto;
-         width: auto;
-         height: auto;
-         background: transparent;
-         flex-direction: row;
-         align-items: center;
-         justify-content: flex-start;
-         transform: none;
-         transition: none;
-         z-index: auto;
-     }
-
-     .nav-list li {
-         margin-left: 32px;
-         opacity: 1;
-     }
-
-     .mobile-menu {
-         display: none;
-     }
-
      .regras h1 {
-         font-size: 96px;
-         padding: 40px;
+         font-size: 60px;
+         padding: 30px 20px;
      }
 
      .regras h2 {
-         font-size: 48px;
-         text-align: left;
-         margin-left: 220px;
+         font-size: 32px;
+         margin-bottom: 15px;
      }
 
      .regras p {
-         font-size: 25px;
-         text-align: left;
-         margin-left: 220px;
+         font-size: 18px;
+         line-height: 1.4;
      }
 
+     .bg-1-2 {
+         padding: 30px 0;
+     }
+ }
+
+ @media (max-width: 768px) {
+     .regras h1 {
+         font-size: 48px;
+         padding: 20px 15px;
+     }
+
+     .regras h2 {
+         font-size: 28px;
+     }
+
+     .regras p {
+         font-size: 16px;
+     }
+
+     .bg-1-2 {
+         padding: 20px 0;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .regras h1 {
+         font-size: 36px;
+         padding: 15px 10px;
+     }
+
+     .regras h2 {
+         font-size: 24px;
+     }
+
+     .regras p {
+         font-size: 14px;
+     }
+
+     .bg-1-2 {
+         padding: 15px 0;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .regras h1 {
+         font-size: 50px;
+     }
+
+     .regras h2 {
+         font-size: 28px;
+     }
+
+     .regras h3 {
+         font-size: 24px;
+     }
+
+     .regras p {
+         font-size: 18px;
+     }
+
+     .peças,
      .cartas {
-         gap: 20px;
-         padding: 50px;
-         flex-wrap: nowrap;
-         min-width: 1200px;
+         gap: 8px;
+         padding: 15px 10px;
      }
 
+     .peças img,
      .cartas img {
-         width: 280px;
+         width: 120px;
+         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
      }
- }
 
- /* Escala dinâmica para telas menores que 1000px */
- @media (max-width: 999px) {
-     body {
-         zoom: calc(100vw / 1366px);
+     .ahaha li {
+         font-size: 18px;
      }
- }
 
- @supports not (zoom: 1) {
-     @media (max-width: 999px) {
-         body {
-             transform: scale(calc(100vw / 1366));
-             transform-origin: top left;
-             width: 1366px;
-         }
+     .rodape-final {
+         font-size: 16px;
+     }
+
+     .btn-cartas {
+         width: 95%;
+         max-width: 280px;
+         font-size: 16px;
+         height: 40px;
      }
  }
 
  /* Escala para notebooks – aproxima experiência de zoom 67% */
- @media (min-width: 1000px) and (max-width: 1600px) {
-     body {
-         zoom: 0.67;
-     }
- }
+@media (min-width: 1000px) and (max-width: 1600px) {
+    body {
+        zoom: 0.67;
+    }
+}
 
- /* Fallback para navegadores sem suporte a zoom (ex.: Firefox) */
- @supports not (zoom: 1) {
-     @media (min-width: 1000px) and (max-width: 1600px) {
-         body {
-             transform: scale(0.67);
-             transform-origin: top left;
-             width: 149.2537313433vw;
-             /* 1 / 0.67 */
-         }
-     }
- }
+/* Fallback para navegadores sem suporte a zoom (ex.: Firefox) */
+@supports not (zoom: 1) {
+    @media (min-width: 1000px) and (max-width: 1600px) {
+        body {
+            transform: scale(0.67);
+            transform-origin: top left;
+            width: 149.2537313433vw; /* 1 / 0.67 */
+        }
+    }
+}

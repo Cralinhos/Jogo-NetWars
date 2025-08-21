@@ -81,6 +81,7 @@ a:hover {
     justify-content: space-around;
     width: 32px;
     height: 32px;
+    z-index: 1000;
 }
 
 .mobile-menu div {
@@ -101,6 +102,55 @@ a:hover {
 
 .mobile-menu.active .line3 {
     transform: rotate(45deg) translate(-5px, -7px);
+}
+
+/* Estilos para o menu mobile ativo */
+.nav-list.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-list.active li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Escala para notebooks – aproxima experiência de zoom 67% */
+@media (min-width: 1000px) and (max-width: 1600px) {
+    body {
+        zoom: 0.67;
+    }
+}
+
+/* Fallback para navegadores sem suporte a zoom (ex.: Firefox) */
+@supports not (zoom: 1) {
+    @media (min-width: 1000px) and (max-width: 1600px) {
+        body {
+            transform: scale(0.67);
+            transform-origin: top left;
+            width: 149.2537313433vw; /* 1 / 0.67 */
+        }
+    }
+}
+
+/* Overlay do menu mobile */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Seção Regras */
@@ -161,9 +211,9 @@ a:hover {
     content: '';
     position: absolute;
     top: 14px;
-    left: -28px;
+    left: 168px;
     width: 2px;
-    height: 225px;
+    height: 1150px;
     background-color: white;
     border-radius: 3px;
 }
@@ -173,9 +223,9 @@ a:hover {
     content: '';
     position: absolute;
     top: 14px;
-    left: -28px;
+    left: 168px;
     width: 2px;
-    height: 1940px;
+    height: 440px;
     background-color: white;
     border-radius: 3px;
 }
@@ -226,17 +276,25 @@ a:hover {
 }
 
 /* Imagens e cartas */
-.peças,
 .cartas {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     padding: 50px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     max-width: 100%;
     overflow-x: auto;
-    min-width: 1200px;
+}
+
+.cartas img {
+    width: 280px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
 }
 
 .peças img {
@@ -248,20 +306,21 @@ a:hover {
     flex-shrink: 0;
 }
 
-.cartas img {
-    width: 250px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-shrink: 0;
-}
-
 .peças img:hover,
 .cartas img:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.peças {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 /* Seções de fundo */
@@ -313,104 +372,148 @@ a:hover {
     .cartas img {
         width: 220px;
     }
-}
 
-/* Escala para notebooks – aproxima experiência de zoom 67% */
-@media (min-width: 1000px) and (max-width: 1600px) {
-    body {
-        zoom: 0.67;
+    .btn-cartas {
+        width: 80%;
+        max-width: 400px;
+        font-size: 24px;
     }
 }
 
-/* Fallback para navegadores sem suporte a zoom (ex.: Firefox) */
-@supports not (zoom: 1) {
-    @media (min-width: 1000px) and (max-width: 1600px) {
-        body {
-            transform: scale(0.67);
-            transform-origin: top left;
-            width: 149.2537313433vw; /* 1 / 0.67 */
-        }
-    }
-}
+ /* Melhorias adicionais para responsividade */
+ @media (max-width: 999px) {
+     .regras h1 {
+         font-size: 60px;
+         padding: 30px 20px;
+     }
 
-/* Manter layout Desktop em telas menores (posições iguais) */
+     .regras h2 {
+         font-size: 32px;
+         margin-bottom: 15px;
+         margin-left: 0;
+         text-align: center;
+     }
+
+     .regras h3 {
+         font-size: 28px;
+         margin-left: 0;
+         text-align: center;
+     }
+
+     .regras p {
+         font-size: 18px;
+         line-height: 1.4;
+         margin-left: 0;
+         text-align: center;
+     }
+
+     .regras div {
+         margin-left: 20px;
+         margin-right: 20px;
+     }
+
+     .bg-1-2, .aba3, .aba4 {
+         padding: 30px 0;
+     }
+ }
+
+ @media (max-width: 768px) {
+     .regras h1 {
+         font-size: 48px;
+         padding: 20px 15px;
+     }
+
+     .regras h2 {
+         font-size: 28px;
+     }
+
+     .regras h3 {
+         font-size: 24px;
+     }
+
+     .regras p {
+         font-size: 16px;
+     }
+
+     .bg-1-2, .aba3, .aba4 {
+         padding: 20px 0;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .regras h1 {
+         font-size: 36px;
+         padding: 15px 10px;
+     }
+
+     .regras h2 {
+         font-size: 24px;
+     }
+
+     .regras h3 {
+         font-size: 20px;
+     }
+
+     .regras p {
+         font-size: 14px;
+     }
+
+     .bg-1-2, .aba3, .aba4 {
+         padding: 15px 0;
+     }
+ }
+
 @media (max-width: 999px) {
-    /* Navegação como no desktop */
     .nav-list {
-        position: static;
-        top: auto;
-        right: auto;
-        width: auto;
-        height: auto;
-        background: transparent;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        transform: none;
-        transition: none;
-        z-index: auto;
-    }
-    .nav-list li { margin-left: 32px; opacity: 1; }
-    .mobile-menu { display: none; }
-
-    /* Seção Regras como no desktop */
-    .regras h1 { font-size: 96px; padding: 40px; }
-    .regras h2 { font-size: 48px; text-align: left; }
-    .regras h3 { font-size: 32px; text-align: left; }
-    .regras p { font-size: 25px; text-align: left; }
-    .regras div { margin-left: 220px; margin-right: 0; }
-    .primeiro::before, .segundo::before, .terceiro::before, .quarto::before { display: block; }
-
-    /* Grids de imagens como no desktop */
-    .peças, .cartas {
-        gap: 20px;
-        padding: 50px;
-        flex-wrap: nowrap;
-        min-width: 1200px;
-    }
-    .peças img, .cartas img { width: 250px; }
-
-    /* Rodapé como no desktop */
-    .rodape-final { font-size: 26px; padding: 20px; min-height: 13vh; }
-}
-
-/* Escala dinâmica para telas menores que 1000px */
-@media (max-width: 999px) {
-    body { zoom: calc(100vw / 1366px); }
-}
-@supports not (zoom: 1) {
-    @media (max-width: 999px) {
-        body {
-            transform: scale(calc(100vw / 1366));
-            transform-origin: top left;
-            width: 1366px;
-        }
-    }
-}
-
-@media (max-width: 999px) {
-    .nav-list {
-        position: absolute;
-        top: 8vh;
+        position: fixed;
+        top: 0;
         right: 0;
-        width: 50vw;
-        height: 92vh;
+        width: 100%;
+        height: 100vh;
         background: #1B004D;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
         transform: translateX(100%);
-        transition: transform 0.3s ease-in;
+        transition: all 0.3s ease-in-out;
         z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
     }
 
     .nav-list.active {
         transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-list li {
-        margin-left: 0;
+        margin: 20px 0;
         opacity: 0;
+        transform: translateX(50px);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-list.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .nav-list li a {
+        font-size: 18px;
+        padding: 15px 20px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-list li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-list li:last-child a {
+        border-bottom: none;
     }
 
     .mobile-menu {
@@ -425,6 +528,7 @@ a:hover {
     .regras h2 {
         font-size: 34px;
         text-align: center;
+        margin-left: 0;
     }
 
     .regras h3 {
@@ -435,6 +539,7 @@ a:hover {
     .regras p {
         font-size: 20px;
         text-align: center;
+        margin-left: 0;
     }
 
     .regras div {
@@ -455,6 +560,7 @@ a:hover {
         gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
+        min-width: auto;
     }
 
     .peças img,
@@ -485,6 +591,13 @@ a:hover {
         height: auto;
         min-height: 13vh;
     }
+
+    .btn-cartas {
+        width: 90%;
+        max-width: 350px;
+        font-size: 20px;
+        height: 50px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -502,6 +615,13 @@ a:hover {
     .peças img,
     .cartas img {
         width: 150px;
+    }
+
+    .btn-cartas {
+        width: 95%;
+        max-width: 300px;
+        font-size: 18px;
+        height: 45px;
     }
 }
 
@@ -541,4 +661,46 @@ a:hover {
     .rodape-final {
         font-size: 16px;
     }
+
+    .btn-cartas {
+        width: 95%;
+        max-width: 280px;
+        font-size: 16px;
+        height: 40px;
+    }
+}
+
+.btn-cartas {
+    text-align: center;
+    width: 457px;
+    height: 41px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background-color: #004C75;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-family: "Lilita One", sans-serif;
+    font-size: 31px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-cartas:hover {
+    background-color: #005a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cartas a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
 }
