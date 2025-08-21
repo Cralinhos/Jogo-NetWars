@@ -619,6 +619,11 @@ a:hover {
     .Inicio {
         padding-top: 50px;
     }
+
+    .faq .barra-lateral {
+        width: 60%;
+        margin-left: 70px;
+    }
     
     .main-text {
         padding: 15px 10px;
