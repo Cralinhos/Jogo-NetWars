@@ -15,6 +15,9 @@ body {
     font-family: "Inconsolata", monospace;
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 /* Links */
@@ -41,7 +44,7 @@ a:hover {
     align-items: center;
     font-family: "Kdam Thmor Pro", sans-serif;
     background: #1B004D;
-    height: 18vh;
+    height: 12vh;
     position: relative;
 }
 
@@ -139,38 +142,45 @@ a:hover {
 .Inicio {
     background: url(Images/Bg.png) no-repeat center center;
     background-size: cover;
-    min-height: 160vh;
+    background-attachment: fixed;
+    min-height: 100vh;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     padding-top: 100px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .main-text {
-
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     color: white;
     max-width: 1200px;
     width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+    min-height: 60vh;
+    margin-top: -330px;
 }
 
 .titulo {
     font-size: 30px;
     font-family: "Lilita One", sans-serif;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    line-height: 1.3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .barra-com-textomenor {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .barra {
@@ -185,6 +195,8 @@ a:hover {
     font-family: "Inconsolata", monospace;
     font-style: italic;
     color: #ffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
 }
 
 /* Seção Explicação do Jogo */
@@ -205,6 +217,8 @@ a:hover {
     max-width: 100%;
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .logo-imagem .imagem-logo {
@@ -214,6 +228,8 @@ a:hover {
     bottom: 90px;
     height: auto;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .texto-logo p {
@@ -359,7 +375,9 @@ a:hover {
 /* Responsividade */
 @media (max-width: 1200px) {
     .main-text {
-        padding: 60px 40px;
+        padding: 40px 20px;
+        min-height: 50vh;
+        max-width: 1000px;
     }
 
     .explicacao-jogo {
@@ -458,7 +476,9 @@ a:hover {
     }
 
     .main-text {
-        padding: 40px 20px;
+        padding: 30px 15px;
+        min-height: 40vh;
+        max-width: 800px;
     }
 
     .explicacao-jogo {
@@ -559,7 +579,9 @@ a:hover {
     }
 
     .main-text {
-        padding: 30px 15px;
+        padding: 20px 10px;
+        min-height: 35vh;
+        max-width: 600px;
     }
 
     .explicacao-jogo {
@@ -596,6 +618,13 @@ a:hover {
 @media (max-width: 480px) {
     .Inicio {
         padding-top: 50px;
+    }
+    
+    .main-text {
+        padding: 15px 10px;
+        min-height: 30vh;
+        max-width: 100%;
+        margin-top: 350px;
     }
 
     .titulo {
@@ -665,21 +694,114 @@ a:hover {
     }
 }
 
-/* Escala para notebooks – aproxima experiência de zoom 67% */
+/* Ajustes para notebooks e telas médias */
 @media (min-width: 1000px) and (max-width: 1600px) {
-    body {
-        zoom: 0.67;
+    .menu {
+        height: 15vh;
+        padding: 15px 20px;
     }
-}
-
-/* Fallback para navegadores sem suporte a zoom (ex.: Firefox) */
-@supports not (zoom: 1) {
-    @media (min-width: 1000px) and (max-width: 1600px) {
-        body {
-            transform: scale(0.67);
-            transform-origin: top left;
-            width: 149.2537313433vw; /* 1 / 0.67 */
-        }
+    
+    .logo .logo-img {
+        width: 120px;
+    }
+    
+    .nav-list li {
+        margin-left: 24px;
+        font-size: 14px;
+    }
+    
+    .Contato {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    .Inicio {
+        min-height: 140vh;
+        padding-top: 80px;
+    }
+    
+    .main-text {
+        padding: 35px 25px;
+        min-height: 45vh;
+        max-width: 1100px;
+    }
+    
+    .titulo {
+        font-size: 26px;
+    }
+    
+    .textomenor {
+        font-size: 14px;
+    }
+    
+    .barra {
+        width: 350px;
+    }
+    
+    .explicacao-jogo {
+        padding: 60px 80px;
+        gap: 60px;
+    }
+    
+    .imagem1 .aimagem {
+        width: 400px;
+    }
+    
+    .logo-imagem .imagem-logo {
+        width: 280px;
+        margin-left: 120px;
+        bottom: 70px;
+    }
+    
+    .texto-logo p {
+        font-size: 28px;
+        bottom: 160px;
+        max-width: 700px;
+    }
+    
+    .objetivos h2 {
+        font-size: 80px;
+        padding: 30px;
+    }
+    
+    .objetivos h3 {
+        font-size: 40px;
+    }
+    
+    .objetivos p {
+        font-size: 22px;
+    }
+    
+    .objetivos div {
+        margin-left: 100px;
+    }
+    
+    .faq h2 {
+        font-size: 80px;
+        padding: 30px;
+    }
+    
+    .faq h3 {
+        font-size: 40px;
+    }
+    
+    .faq p {
+        font-size: 22px;
+        max-width: 1600px;
+    }
+    
+    .faq div {
+        margin-left: 100px;
+    }
+    
+    .barra-lateral {
+        right: 100px;
+        width: calc(100% - 200px);
+    }
+    
+    .rodape-final {
+        font-size: 22px;
+        min-height: 12vh;
     }
 }
 
@@ -758,17 +880,114 @@ a:hover {
     }
 }
 
-/* Escala dinâmica para telas menores que 1000px para manter tudo visível sem reflow */
+/* Ajustes específicos para telas entre 1000px e 1200px */
 @media (min-width: 1000px) and (max-width: 1200px) {
-    body { zoom: calc(100vw / 1366px); }
-}
-@supports not (zoom: 1) {
-    @media (min-width: 1000px) and (max-width: 1200px) {
-        body {
-            transform: scale(calc(100vw / 1366));
-            transform-origin: top left;
-            width: 1366px;
-        }
+    .menu {
+        height: 14vh;
+        padding: 12px 15px;
+    }
+    
+    .logo .logo-img {
+        width: 110px;
+    }
+    
+    .nav-list li {
+        margin-left: 20px;
+        font-size: 13px;
+    }
+    
+    .Contato {
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+    
+    .Inicio {
+        min-height: 130vh;
+        padding-top: 70px;
+    }
+    
+    .main-text {
+        padding: 30px 20px;
+        min-height: 40vh;
+        max-width: 900px;
+    }
+    
+    .titulo {
+        font-size: 24px;
+    }
+    
+    .textomenor {
+        font-size: 13px;
+    }
+    
+    .barra {
+        width: 300px;
+    }
+    
+    .explicacao-jogo {
+        padding: 50px 60px;
+        gap: 50px;
+    }
+    
+    .imagem1 .aimagem {
+        width: 350px;
+    }
+    
+    .logo-imagem .imagem-logo {
+        width: 250px;
+        margin-left: 100px;
+        bottom: 60px;
+    }
+    
+    .texto-logo p {
+        font-size: 26px;
+        bottom: 140px;
+        max-width: 600px;
+    }
+    
+    .objetivos h2 {
+        font-size: 70px;
+        padding: 25px;
+    }
+    
+    .objetivos h3 {
+        font-size: 36px;
+    }
+    
+    .objetivos p {
+        font-size: 20px;
+    }
+    
+    .objetivos div {
+        margin-left: 80px;
+    }
+    
+    .faq h2 {
+        font-size: 70px;
+        padding: 25px;
+    }
+    
+    .faq h3 {
+        font-size: 36px;
+    }
+    
+    .faq p {
+        font-size: 20px;
+        max-width: 1400px;
+    }
+    
+    .faq div {
+        margin-left: 80px;
+    }
+    
+    .barra-lateral {
+        right: 80px;
+        width: calc(100% - 160px);
+    }
+    
+    .rodape-final {
+        font-size: 20px;
+        min-height: 11vh;
     }
 }
 
