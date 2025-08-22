@@ -1143,10 +1143,12 @@ a:hover {
         justify-content: center;
         align-items: center;
         height: 350px;
-        padding: 20px 0;
-        margin: 20px 0;
+        padding: 0 !important;
+        margin: 0 !important;
         z-index: 1;
         pointer-events: auto;
+        box-sizing: border-box;
+        width: 100%;
     }
 
     .cartas-container,
@@ -1160,6 +1162,9 @@ a:hover {
         overflow: visible;
         pointer-events: auto;
         touch-action: pan-y;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     .cartas img,
@@ -1176,6 +1181,8 @@ a:hover {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%) translateX(0);
+        margin: 0;
+        padding: 0;
     }
 
     .cartas img.active,
@@ -1185,6 +1192,8 @@ a:hover {
         z-index: 2;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         filter: brightness(1);
+        left: 50% !important;
+        top: 50% !important;
     }
 
     .cartas img.prev,
