@@ -1158,14 +1158,12 @@ a:hover {
         align-items: center;
         width: 100%;
         height: 250px;
-        position: relative;
         overflow: visible;
         pointer-events: auto;
         touch-action: pan-y;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        left: -8%; /* Aumentado para dispositivos como Redmi Note 8 */
     }
 
     .cartas img,

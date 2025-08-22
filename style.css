@@ -7,6 +7,16 @@
 /* Reset e configurações globais */
 html {
     overflow-x: hidden;
+    position: relative;
+}
+
+/* Garantir que o header sempre fique no topo */
+header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    background: #1B004D;
 }
 
 * {
@@ -23,6 +33,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    position: relative;
 }
 
 /* Links */
@@ -82,6 +93,13 @@ a:hover {
 }
 
 /* Header e Navegação */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
 .logo .logo-img {
     width: 150px;
     height: auto;
@@ -95,7 +113,10 @@ a:hover {
     font-family: "Kdam Thmor Pro", sans-serif;
     background: #1B004D;
     height: 12vh;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
 }
 
 .nav-list {
@@ -134,7 +155,24 @@ a:hover {
     justify-content: space-around;
     width: 32px;
     height: 32px;
-    z-index: 1000;
+    z-index: 1001;
+}
+
+/* Garantir que o header funcione corretamente em mobile */
+@media (max-width: 768px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+    
+    .menu {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
 }
 
 .mobile-menu div {
@@ -192,7 +230,7 @@ a:hover {
 .Inicio {
     background: url(Images/Bg.png) no-repeat center center;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: scroll;
     min-height: 100vh;
     display: flex;
     align-items: flex-start;
@@ -200,6 +238,7 @@ a:hover {
     padding-top: 100px;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+    position: relative;
 }
 
 .main-text {
@@ -214,7 +253,6 @@ a:hover {
     padding: 0 20px;
     margin: 0 auto;
     min-height: 60vh;
-    margin-top: -300px;
 }
 
 .titulo {
@@ -804,7 +842,6 @@ a:hover {
 /* Regras específicas para telas com altura limitada */
 @media (max-height: 600px) {
     .nav-list {
-        padding-top: 80px;
         justify-content: flex-start;
     }
 
@@ -836,119 +873,128 @@ a:hover {
 
 /* Ajustes para notebooks e telas médias */
 @media (min-width: 1000px) and (max-width: 1600px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
     .menu {
-        height: 15vh;
-        padding: 15px 20px;
+        height: 12vh;
+        padding: 12px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
     
     .logo .logo-img {
-        width: 120px;
+        width: 100px;
     }
     
     .nav-list li {
-        margin-left: 24px;
-        font-size: 14px;
+        margin-left: 20px;
+        font-size: 13px;
     }
     
     .Contato {
-        padding: 8px 16px;
-        font-size: 14px;
+        padding: 6px 12px;
+        font-size: 13px;
     }
     
     .Inicio {
-        min-height: 140vh;
-        padding-top: 80px;
+        min-height: 100vh;
+        padding-top: 60px;
     }
     
     .main-text {
-        padding: 35px 25px;
-        min-height: 45vh;
-        max-width: 1100px;
-    }
-    
-    .titulo {
-        font-size: 26px;
-    }
-    
-    .textomenor {
-        font-size: 14px;
-    }
-    
-    .barra {
-        width: 350px;
-    }
-    
-    .explicacao-jogo {
-        padding: 60px 80px;
-        gap: 60px;
-    }
-    
-    .imagem1 .aimagem {
-        width: 400px;
-    }
-    
-    .logo-imagem .imagem-logo {
-        width: 280px;
-        margin-left: 120px;
-        bottom: 70px;
-    }
-    
-    .texto-logo p {
-        font-size: 28px;
-        bottom: 160px;
+        position: relative;
+        top: -220px;        /* Move 50px para baixo */
+        margin-top: 80px; /* Adiciona 80px de espaçamento do topo */
+        padding: 15px 10px;
         max-width: 700px;
     }
     
+    .titulo {
+        font-size: 22px;
+    }
+    
+    .textomenor {
+        font-size: 12px;
+    }
+    
+    .barra {
+        width: 280px;
+    }
+    
+    .explicacao-jogo {
+        padding: 40px 60px;
+        gap: 40px;
+    }
+    
+    .imagem1 .aimagem {
+        width: 320px;
+    }
+    
+    .logo-imagem .imagem-logo {
+        width: 220px;
+        margin-left: 80px;
+        bottom: 50px;
+    }
+    
+    .texto-logo p {
+        font-size: 20px;
+        bottom: 120px;
+        max-width: 500px;
+    }
+    
     .objetivos h2 {
-        font-size: 80px;
-        padding: 30px;
+        font-size: 48px;
+        padding: 20px;
     }
     
     .objetivos h3 {
-        font-size: 40px;
+        font-size: 24px;
     }
     
     .objetivos p {
-        font-size: 22px;
+        font-size: 16px;
     }
     
     .objetivos div {
-        margin-left: 100px;
+        margin-left: 60px;
     }
     
     .faq h2 {
-        font-size: 80px;
-        padding: 30px;
+        font-size: 48px;
+        padding: 20px;
     }
     
     .faq h3 {
-        font-size: 40px;
+        font-size: 24px;
     }
     
     .faq p {
-        font-size: 22px;
-        max-width: 1600px;
+        font-size: 16px;
+        max-width: 1200px;
     }
     
     .faq div {
-        margin-left: 100px;
+        margin-left: 60px;
     }
     
     .barra-lateral {
-        right: 100px;
-        width: calc(100% - 200px);
+        right: 60px;
+        width: calc(100% - 120px);
     }
     
     .rodape-final {
-        font-size: 22px;
-        min-height: 12vh;
+        font-size: 18px;
+        min-height: 10vh;
     }
 }
 
 /* Manter layout Desktop em telas menores (posições iguais) */
 @media (min-width: 1000px) and (max-width: 1200px) {
-
-
     /* Navegação como no desktop */
     .nav-list {
         position: static;
@@ -1024,111 +1070,331 @@ a:hover {
 /* Ajustes específicos para telas entre 1000px e 1200px */
 @media (min-width: 1000px) and (max-width: 1200px) {
     .menu {
-        height: 14vh;
-        padding: 12px 15px;
+        height: 11vh;
+        padding: 10px 15px;
     }
     
     .logo .logo-img {
-        width: 110px;
+        width: 90px;
     }
     
     .nav-list li {
-        margin-left: 20px;
-        font-size: 13px;
+        margin-left: 18px;
+        font-size: 12px;
     }
     
     .Contato {
-        padding: 7px 14px;
-        font-size: 13px;
+        padding: 5px 10px;
+        font-size: 12px;
     }
     
     .Inicio {
-        min-height: 130vh;
-        padding-top: 70px;
+        min-height: 90vh;
+        padding-top: 50px;
     }
-    
-    .main-text {
-        padding: 30px 20px;
-        min-height: 40vh;
-        max-width: 900px;
-    }
+
     
     .titulo {
-        font-size: 24px;
+        font-size: 20px;
     }
     
     .textomenor {
-        font-size: 13px;
+        font-size: 11px;
     }
     
     .barra {
-        width: 300px;
+        width: 250px;
     }
     
     .explicacao-jogo {
-        padding: 50px 60px;
-        gap: 50px;
+        padding: 35px 40px;
+        gap: 35px;
     }
     
     .imagem1 .aimagem {
-        width: 350px;
+        width: 280px;
     }
     
     .logo-imagem .imagem-logo {
-        width: 250px;
-        margin-left: 100px;
-        bottom: 60px;
+        width: 200px;
+        margin-left: 60px;
+        bottom: 40px;
     }
     
     .texto-logo p {
-        font-size: 26px;
-        bottom: 140px;
-        max-width: 600px;
+        font-size: 18px;
+        bottom: 100px;
+        max-width: 450px;
     }
     
     .objetivos h2 {
-        font-size: 56px;
-        padding: 25px;
+        font-size: 36px;
+        padding: 15px;
     }
     
     .objetivos h3 {
-        font-size: 32px;
+        font-size: 20px;
     }
     
     .objetivos p {
-        font-size: 18px;
+        font-size: 14px;
     }
     
     .objetivos div {
-        margin-left: 80px;
+        margin-left: 50px;
     }
     
     .faq h2 {
-        font-size: 56px;
-        padding: 25px;
+        font-size: 36px;
+        padding: 15px;
     }
     
     .faq h3 {
-        font-size: 32px;
+        font-size: 20px;
     }
     
     .faq p {
-        font-size: 18px;
-        max-width: 1400px;
+        font-size: 14px;
+        max-width: 1000px;
     }
     
     .faq div {
-        margin-left: 80px;
+        margin-left: 50px;
     }
     
     .barra-lateral {
-        right: 80px;
-        width: calc(100% - 160px);
+        right: 50px;
+        width: calc(100% - 100px);
     }
     
     .rodape-final {
-        font-size: 20px;
-        min-height: 11vh;
+        font-size: 16px;
+        min-height: 9vh;
+    }
+}
+
+/* Media query específica para notebooks com resoluções típicas */
+@media (min-width: 1366px) and (max-width: 1440px) {
+    .menu {
+        height: 10vh;
+        padding: 10px 20px;
+    }
+    
+    .logo .logo-img {
+        width: 85px;
+    }
+    
+    .nav-list li {
+        margin-left: 16px;
+        font-size: 11px;
+    }
+    
+    .Contato {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+    
+    .Inicio {
+        min-height: 85vh;
+        padding-top: 45px;
+    }
+    
+    .main-text {
+        padding: 18px 12px;
+        min-height: 28vh;
+        max-width: 750px;
+    }
+    
+    .titulo {
+        font-size: 18px;
+    }
+    
+    .textomenor {
+        font-size: 10px;
+    }
+    
+    .barra {
+        width: 220px;
+    }
+    
+    .explicacao-jogo {
+        padding: 30px 35px;
+        gap: 30px;
+    }
+    
+    .imagem1 .aimagem {
+        width: 250px;
+    }
+    
+    .logo-imagem .imagem-logo {
+        width: 180px;
+        margin-left: 50px;
+        bottom: 35px;
+    }
+    
+    .texto-logo p {
+        font-size: 16px;
+        bottom: 85px;
+        max-width: 400px;
+    }
+    
+    .objetivos h2 {
+        font-size: 32px;
+        padding: 12px;
+    }
+    
+    .objetivos h3 {
+        font-size: 18px;
+    }
+    
+    .objetivos p {
+        font-size: 13px;
+    }
+    
+    .objetivos div {
+        margin-left: 40px;
+    }
+    
+    .faq h2 {
+        font-size: 32px;
+        padding: 12px;
+    }
+    
+    .faq h3 {
+        font-size: 18px;
+    }
+    
+    .faq p {
+        font-size: 13px;
+        max-width: 900px;
+    }
+    
+    .faq div {
+        margin-left: 40px;
+    }
+    
+    .barra-lateral {
+        right: 40px;
+        width: calc(100% - 80px);
+    }
+    
+    .rodape-final {
+        font-size: 14px;
+        min-height: 8vh;
+    }
+}
+
+/* Media query para notebooks com resoluções menores */
+@media (min-width: 1280px) and (max-width: 1365px) {
+    .menu {
+        height: 9vh;
+        padding: 8px 18px;
+    }
+    
+    .logo .logo-img {
+        width: 80px;
+    }
+    
+    .nav-list li {
+        margin-left: 14px;
+        font-size: 10px;
+    }
+    
+    .Contato {
+        padding: 3px 7px;
+        font-size: 10px;
+    }
+    
+    .Inicio {
+        min-height: 80vh;
+        padding-top: 40px;
+    }
+    
+    .main-text {
+        position: relative;
+        top: 50px;
+        margin-top: 80px;
+        padding: 15px 10px;
+        min-height: 25vh;
+        max-width: 700px;
+    }
+    
+    .titulo {
+        font-size: 16px;
+    }
+    
+    .textomenor {
+        font-size: 9px;
+    }
+    
+    .barra {
+        width: 200px;
+    }
+    
+    .explicacao-jogo {
+        padding: 25px 30px;
+        gap: 25px;
+    }
+    
+    .imagem1 .aimagem {
+        width: 220px;
+    }
+    
+    .logo-imagem .imagem-logo {
+        width: 160px;
+        margin-left: 40px;
+        bottom: 30px;
+    }
+    
+    .texto-logo p {
+        font-size: 14px;
+        bottom: 75px;
+        max-width: 350px;
+    }
+    
+    .objetivos h2 {
+        font-size: 28px;
+        padding: 10px;
+    }
+    
+    .objetivos h3 {
+        font-size: 16px;
+    }
+    
+    .objetivos p {
+        font-size: 12px;
+    }
+    
+    .objetivos div {
+        margin-left: 35px;
+    }
+    
+    .faq h2 {
+        font-size: 28px;
+        padding: 10px;
+    }
+    
+    .faq h3 {
+        font-size: 16px;
+    }
+    
+    .faq p {
+        font-size: 12px;
+        max-width: 800px;
+    }
+    
+    .faq div {
+        margin-left: 35px;
+    }
+    
+    .barra-lateral {
+        right: 35px;
+        width: calc(100% - 70px);
+    }
+    
+    .rodape-final {
+        font-size: 13px;
+        min-height: 7vh;
     }
 }
 
