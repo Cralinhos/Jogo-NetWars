@@ -521,6 +521,7 @@ a:hover {
 .regras p {
     font-family: "Inconsolata", monospace;
     font-size: 25px;
+    text-align: justify;
     font-weight: 200;
     line-height: 1.5;
     margin-bottom: 20px;
