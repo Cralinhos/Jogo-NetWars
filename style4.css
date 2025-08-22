@@ -1117,6 +1117,7 @@ a:hover {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        left: -5%; /* ADDED: Move container slightly to the left */
     }
 
     .cartas img,
