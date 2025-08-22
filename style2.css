@@ -1157,7 +1157,7 @@ a:hover {
         width: 100%;
         height: 250px;
         position: relative;
-        overflow: hidden;
+        overflow: visible;
         pointer-events: auto;
         touch-action: pan-y;
     }
