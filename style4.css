@@ -1333,3 +1333,367 @@ a:hover {
         left: 48% !important; /* Ajuste fino para centralização */
     }
 }
+
+/* ===== MEDIA QUERIES ESPECÍFICAS PARA IPHONE 6/7/8 PLUS ===== */
+/* iPhone 6/7/8 Plus: 414px × 736px */
+@media only screen and (min-width: 414px) and (max-width: 414px) and (min-height: 736px) and (max-height: 736px) {
+    /* Otimizações para o carrossel no iPhone Plus */
+    .cartas,
+    .peças {
+        height: 350px;
+        margin: 20px 0;
+    }
+
+    .cartas-container,
+    .peças-container {
+        height: 250px;
+        left: -8%;
+    }
+
+    .cartas img,
+    .peças img {
+        min-width: 160px;
+        max-width: 160px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .cartas img.active,
+    .peças img.active {
+        left: 50% !important;
+        transform: translate(-50%, -50%) scale(1.1);
+        z-index: 10;
+    }
+
+    .cartas img.prev,
+    .peças img.prev {
+        transform: translate(-50%, -50%) translateX(-100px) scale(0.9);
+        opacity: 0.7;
+    }
+
+    .cartas img.next,
+    .peças img.next {
+        transform: translate(-50%, -50%) translateX(100px) scale(0.9);
+        opacity: 0.7;
+    }
+
+    .cartas img.prev2,
+    .peças img.prev2 {
+        transform: translate(-50%, -50%) translateX(-180px) scale(0.8);
+        opacity: 0.5;
+    }
+
+    .cartas img.next2,
+    .peças img.next2 {
+        transform: translate(-50%, -50%) translateX(180px) scale(0.8);
+        opacity: 0.5;
+    }
+
+    /* Botões do carrossel otimizados para iPhone Plus */
+    .carousel-btn {
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 25px;
+        background: rgba(27, 0, 77, 0.9);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .carousel-btn:hover {
+        background: rgba(27, 0, 77, 1);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .carousel-btn:active {
+        transform: translateY(0);
+    }
+
+    /* Títulos das seções otimizados */
+    .cartas h2,
+    .peças h2 {
+        font-size: 32px;
+        margin: 30px 0 20px;
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Modal otimizado para iPhone Plus */
+    .image-modal {
+        padding: 20px;
+    }
+
+    .modal-content {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-close {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 28px;
+        background: rgba(0, 0, 0, 0.7);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Indicadores do carrossel otimizados para iPhone Plus */
+    .carousel-indicator {
+        display: block !important;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .carousel-indicator span {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        margin: 0 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .carousel-indicator span.active {
+        background: rgba(255, 255, 255, 1);
+        transform: scale(1.2);
+    }
+
+    .carousel-indicator span:hover {
+        background: rgba(255, 255, 255, 0.8);
+        transform: scale(1.1);
+    }
+
+    /* Informações do carrossel otimizadas para iPhone Plus */
+    .carousel-info {
+        display: block !important;
+        font-size: 16px;
+        margin-top: 15px;
+        padding: 0 20px;
+        line-height: 1.5;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .carousel-info strong {
+        color: white;
+        font-weight: 600;
+    }
+
+    /* Melhorias de acessibilidade para iPhone Plus */
+    .carousel-btn:focus {
+        outline: 3px solid rgba(255, 255, 255, 0.5);
+        outline-offset: 2px;
+    }
+
+    .cartas img:focus,
+    .peças img:focus {
+        outline: 3px solid rgba(255, 255, 255, 0.7);
+        outline-offset: 3px;
+    }
+
+    .carousel-indicator span:focus {
+        outline: 2px solid rgba(255, 255, 255, 0.7);
+        outline-offset: 2px;
+    }
+
+    /* Otimizações de performance para iPhone Plus */
+    .cartas img,
+    .peças img {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    /* Ajustes de espaçamento para melhor usabilidade */
+    .cartas,
+    .peças {
+        margin: 25px 0;
+        padding: 0 10px;
+    }
+
+    /* Melhor contraste para elementos interativos */
+    .carousel-btn {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Otimizações específicas para o estilo 4 */
+    .cartas-container,
+    .peças-container {
+        animation-duration: 25s;
+        animation-timing-function: linear;
+    }
+
+    .cartas.paused .cartas-container,
+    .peças.paused .peças-container {
+        animation-play-state: paused;
+    }
+}
+
+/* ===== MEDIA QUERIES PARA IPHONE 6/7/8 PLUS EM ORIENTAÇÃO LANDSCAPE ===== */
+@media only screen and (min-width: 736px) and (max-width: 736px) and (min-height: 414px) and (max-height: 414px) {
+    /* Carrossel otimizado para landscape no iPhone Plus */
+    .cartas,
+    .peças {
+        height: 280px;
+        margin: 15px 0;
+    }
+
+    .cartas-container,
+    .peças-container {
+        height: 200px;
+        left: -5%;
+    }
+
+    .cartas img,
+    .peças img {
+        min-width: 140px;
+        max-width: 140px;
+        border-radius: 10px;
+    }
+
+    .cartas img.active,
+    .peças img.active {
+        left: 50% !important;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .cartas img.prev,
+    .peças img.prev {
+        transform: translate(-50%, -50%) translateX(-80px) scale(0.9);
+    }
+
+    .cartas img.next,
+    .peças img.next {
+        transform: translate(-50%, -50%) translateX(80px) scale(0.9);
+    }
+
+    .cartas img.prev2,
+    .peças img.prev2 {
+        transform: translate(-50%, -50%) translateX(-150px) scale(0.8);
+    }
+
+    .cartas img.next2,
+    .peças img.next2 {
+        transform: translate(-50%, -50%) translateX(150px) scale(0.8);
+    }
+
+    /* Botões landscape */
+    .carousel-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+        border-radius: 20px;
+    }
+
+    /* Títulos landscape */
+    .cartas h2,
+    .peças h2 {
+        font-size: 28px;
+        margin: 20px 0 15px;
+    }
+
+    /* Modal landscape */
+    .modal-content {
+        max-width: 85%;
+        max-height: 85%;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+
+    /* Indicadores landscape */
+    .carousel-indicator {
+        margin: 15px auto;
+    }
+
+    .carousel-indicator span {
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+    }
+
+    /* Informações landscape */
+    .carousel-info {
+        font-size: 14px;
+        margin-top: 12px;
+        padding: 0 15px;
+    }
+}
+
+/* ===== MEDIA QUERIES PARA IPHONE 6/7/8 PLUS COM DENSIDADE DE PIXEL ALTA ===== */
+@media only screen and (min-width: 414px) and (max-width: 414px) and (min-height: 736px) and (max-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Otimizações para telas Retina no carrossel */
+    .cartas img,
+    .peças img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+
+    /* Melhor renderização de fontes para telas Retina */
+    .cartas h2,
+    .peças h2,
+    .carousel-btn,
+    .carousel-info {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    /* Ajustes de sombra para telas Retina */
+    .cartas img,
+    .peças img {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .carousel-btn {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* ===== MEDIA QUERIES PARA IPHONE 6/7/8 PLUS COM SUPORTE A SAFARI ===== */
+@supports (-webkit-touch-callout: none) {
+    @media only screen and (min-width: 414px) and (max-width: 414px) and (min-height: 736px) and (max-height: 736px) {
+        /* Otimizações específicas para Safari no iOS no carrossel */
+        .cartas-container,
+        .peças-container {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        /* Melhor suporte para viewport do Safari no carrossel */
+        .cartas img.active,
+        .peças img.active {
+            -webkit-transform: translate(-50%, -50%) scale(1.1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* Otimizações de scroll para Safari no carrossel */
+        .cartas,
+        .peças {
+            -webkit-overflow-scrolling: touch;
+            overflow-scrolling: touch;
+        }
+
+        /* Melhor suporte para elementos fixos no Safari no carrossel */
+        .carousel-btn {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+    }
+}
