@@ -151,7 +151,9 @@ class Carousel {
     addEventListeners() {
         // Eventos para as imagens
         this.images.forEach((img, index) => {
-            img.addEventListener('click', () => {
+            img.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
                 this.openModal(img.src, img.alt);
             });
             
@@ -175,7 +177,16 @@ class Carousel {
             img.addEventListener('touchend', (e) => {
                 e.stopPropagation();
                 this.touchEndX = e.changedTouches[0].clientX;
-                this.handleSwipe();
+                
+                // Verificar se foi um clique simples (sem movimento)
+                const touchDistance = Math.abs(this.touchEndX - this.touchStartX);
+                if (touchDistance < 10) {
+                    // Foi um clique, abrir modal
+                    this.openModal(img.src, img.alt);
+                } else {
+                    // Foi um swipe
+                    this.handleSwipe();
+                }
                 
                 setTimeout(() => {
                     if (!this.isPaused) {
@@ -357,16 +368,26 @@ class Carousel {
     }
     
     openModal(src, alt) {
+        console.log('Abrindo modal:', src, alt);
         const modalImage = this.modal.querySelector('.modal-image');
         modalImage.src = src;
         modalImage.alt = alt;
         this.modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        
+        // Pausar o carrossel quando o modal estiver aberto
+        this.pauseAutoPlay();
     }
     
     closeModal() {
+        console.log('Fechando modal');
         this.modal.classList.remove('active');
         document.body.style.overflow = '';
+        
+        // Retomar o carrossel quando o modal for fechado
+        setTimeout(() => {
+            this.resumeAutoPlay();
+        }, 1000);
     }
 }
 

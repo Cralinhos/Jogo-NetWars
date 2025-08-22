@@ -15,7 +15,7 @@ body {
     font-family: "Inconsolata", monospace;
     line-height: 1.6;
     overflow-x: hidden;
-    overflow-y: none;
+    overflow-y: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
