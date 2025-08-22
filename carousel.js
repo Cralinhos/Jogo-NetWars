@@ -173,6 +173,27 @@ class Carousel {
                     this.resumeAutoPlay();
                 }
             });
+            
+            // Eventos de touch para as imagens
+            img.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.touchStartX = e.touches[0].clientX;
+                this.pauseAutoPlay();
+            }, { passive: false });
+            
+            img.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.touchEndX = e.changedTouches[0].clientX;
+                this.handleSwipe();
+                
+                setTimeout(() => {
+                    if (!this.isPaused) {
+                        this.resumeAutoPlay();
+                    }
+                }, 3000);
+            }, { passive: false });
         });
         
         // Eventos para indicadores
@@ -209,18 +230,25 @@ class Carousel {
         // Variáveis para detectar swipe
         this.touchStartX = 0;
         this.touchEndX = 0;
-        this.minSwipeDistance = 50; // Distância mínima para considerar um swipe
+        this.minSwipeDistance = 30; // Distância mínima reduzida para facilitar o swipe
         
         // Eventos de touch para swipe
         this.container.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Prevenir comportamento padrão
             e.stopPropagation();
-            this.touchStartX = e.changedTouches[0].screenX;
+            this.touchStartX = e.touches[0].clientX;
             this.pauseAutoPlay();
-        });
+        }, { passive: false });
+        
+        this.container.addEventListener('touchmove', (e) => {
+            e.preventDefault(); // Prevenir scroll durante o swipe
+            e.stopPropagation();
+        }, { passive: false });
         
         this.container.addEventListener('touchend', (e) => {
+            e.preventDefault();
             e.stopPropagation();
-            this.touchEndX = e.changedTouches[0].screenX;
+            this.touchEndX = e.changedTouches[0].clientX;
             this.handleSwipe();
             
             setTimeout(() => {
@@ -228,7 +256,7 @@ class Carousel {
                     this.resumeAutoPlay();
                 }
             }, 3000);
-        });
+        }, { passive: false });
         
         // Evitar interferência com scroll da página
         this.container.addEventListener('wheel', (e) => {
@@ -239,14 +267,25 @@ class Carousel {
     handleSwipe() {
         const swipeDistance = this.touchEndX - this.touchStartX;
         
+        console.log('Swipe detectado:', {
+            start: this.touchStartX,
+            end: this.touchEndX,
+            distance: swipeDistance,
+            minDistance: this.minSwipeDistance
+        });
+        
         if (Math.abs(swipeDistance) > this.minSwipeDistance) {
             if (swipeDistance > 0) {
                 // Swipe para direita - imagem anterior
+                console.log('Swipe para direita - imagem anterior');
                 this.prev();
             } else {
                 // Swipe para esquerda - próxima imagem
+                console.log('Swipe para esquerda - próxima imagem');
                 this.next();
             }
+        } else {
+            console.log('Swipe muito pequeno, ignorado');
         }
     }
     
