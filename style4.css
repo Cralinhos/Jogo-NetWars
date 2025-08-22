@@ -1104,7 +1104,7 @@ a:hover {
         width: 100%;
         height: 250px;
         position: relative;
-        overflow: visible;
+        overflow: hidden;
         pointer-events: auto;
         touch-action: pan-y;
     }

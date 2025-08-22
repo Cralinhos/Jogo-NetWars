@@ -37,9 +37,6 @@ class Carousel {
         // Criar modal para ampliar imagens
         this.createModal();
         
-        // Adicionar mensagem informativa
-        this.createInfoMessage();
-        
         // Adicionar eventos
         this.addEventListeners();
         
@@ -149,13 +146,7 @@ class Carousel {
             this.modal = document.querySelector('.image-modal');
         }
     }
-    
-    createInfoMessage() {
-        const infoMessage = document.createElement('div');
-        infoMessage.className = 'carousel-info';
-        infoMessage.innerHTML = '<strong>💡 Dica:</strong> Clique nas imagens para ampliá-las ou use os controles para navegar manualmente';
-        this.container.appendChild(infoMessage);
-    }
+
     
     addEventListeners() {
         // Eventos para as imagens
@@ -176,14 +167,12 @@ class Carousel {
             
             // Eventos de touch para as imagens
             img.addEventListener('touchstart', (e) => {
-                e.preventDefault();
                 e.stopPropagation();
                 this.touchStartX = e.touches[0].clientX;
                 this.pauseAutoPlay();
-            }, { passive: false });
+            });
             
             img.addEventListener('touchend', (e) => {
-                e.preventDefault();
                 e.stopPropagation();
                 this.touchEndX = e.changedTouches[0].clientX;
                 this.handleSwipe();
@@ -193,7 +182,7 @@ class Carousel {
                         this.resumeAutoPlay();
                     }
                 }, 3000);
-            }, { passive: false });
+            });
         });
         
         // Eventos para indicadores
@@ -234,19 +223,16 @@ class Carousel {
         
         // Eventos de touch para swipe
         this.container.addEventListener('touchstart', (e) => {
-            e.preventDefault(); // Prevenir comportamento padrão
             e.stopPropagation();
             this.touchStartX = e.touches[0].clientX;
             this.pauseAutoPlay();
-        }, { passive: false });
+        });
         
         this.container.addEventListener('touchmove', (e) => {
-            e.preventDefault(); // Prevenir scroll durante o swipe
             e.stopPropagation();
-        }, { passive: false });
+        });
         
         this.container.addEventListener('touchend', (e) => {
-            e.preventDefault();
             e.stopPropagation();
             this.touchEndX = e.changedTouches[0].clientX;
             this.handleSwipe();
@@ -256,7 +242,7 @@ class Carousel {
                     this.resumeAutoPlay();
                 }
             }, 3000);
-        }, { passive: false });
+        });
         
         // Evitar interferência com scroll da página
         this.container.addEventListener('wheel', (e) => {
@@ -393,23 +379,29 @@ document.addEventListener('DOMContentLoaded', () => {
         // Inicializar carrossel para cartas
         const cartasContainers = document.querySelectorAll('.cartas');
         cartasContainers.forEach(container => {
-            new Carousel(container, {
-                interval: 3000,
-                autoPlay: true,
-                showIndicators: true,
-                showControls: true
-            });
+            const images = container.querySelectorAll('img');
+            if (images.length > 1) {
+                new Carousel(container, {
+                    interval: 3000,
+                    autoPlay: true,
+                    showIndicators: false,
+                    showControls: false
+                });
+            }
         });
         
         // Inicializar carrossel para peças
         const pecasContainers = document.querySelectorAll('.peças');
         pecasContainers.forEach(container => {
-            new Carousel(container, {
-                interval: 3000,
-                autoPlay: true,
-                showIndicators: true,
-                showControls: true
-            });
+            const images = container.querySelectorAll('img');
+            if (images.length > 1) {
+                new Carousel(container, {
+                    interval: 3000,
+                    autoPlay: true,
+                    showIndicators: false,
+                    showControls: false
+                });
+            }
         });
     }
 });
