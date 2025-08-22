@@ -1125,7 +1125,7 @@ a:hover {
         opacity: 0;
         z-index: 1;
         filter: brightness(0.7);
-        left: 45%;
+        left: 50%;
         top: 50%;
         transform: translate(-50%, -50%) translateX(0);
     }
@@ -1141,14 +1141,14 @@ a:hover {
 
     .cartas img.prev,
     .peças img.prev {
-        transform: translate(-50%, -50%) translateX(-180px);
+        transform: translate(-50%, -50%) translateX(-120px);
         opacity: 0.4;
         filter: brightness(0.6);
     }
 
     .cartas img.next,
     .peças img.next {
-        transform: translate(-50%, -50%) translateX(180px);
+        transform: translate(-50%, -50%) translateX(120px);
         opacity: 0.4;
         filter: brightness(0.6);
     }
@@ -1288,12 +1288,12 @@ a:hover {
 
     .cartas img.prev,
     .peças img.prev {
-        transform: translate(-50%, -50%) translateX(-130px);
+        transform: translate(-50%, -50%) translateX(-90px);
     }
 
     .cartas img.next,
     .peças img.next {
-        transform: translate(-50%, -50%) translateX(130px);
+        transform: translate(-50%, -50%) translateX(90px);
     }
 
     .carousel-btn {
