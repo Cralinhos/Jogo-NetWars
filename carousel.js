@@ -123,7 +123,7 @@ class Carousel {
             this.modal.className = 'image-modal';
             this.modal.innerHTML = `
                 <div class="modal-content">
-                    <button class="modal-close">&times;</button>
+                    <button class="modal-close" aria-label="Fechar imagem">&times;</button>
                     <img class="modal-image" src="" alt="Imagem ampliada">
                 </div>
             `;
@@ -135,6 +135,19 @@ class Carousel {
                     this.closeModal();
                 }
             });
+            
+            // Evento de touch para fechar modal em dispositivos móveis
+            this.modal.addEventListener('touchend', (e) => {
+                if (e.target === this.modal || e.target.classList.contains('modal-close')) {
+                    e.preventDefault();
+                    this.closeModal();
+                }
+            }, { passive: false });
+            
+            // Evento de touch para abrir modal em dispositivos móveis
+            this.modal.addEventListener('touchstart', (e) => {
+                e.stopPropagation();
+            }, { passive: false });
             
             // Fechar com ESC
             document.addEventListener('keydown', (e) => {
@@ -167,22 +180,46 @@ class Carousel {
                 }
             });
             
-            // Eventos de touch para as imagens
+            // Eventos de touch para as imagens - melhorado para dispositivos móveis
+            let touchStartTime = 0;
+            let touchStartY = 0;
+            
             img.addEventListener('touchstart', (e) => {
                 e.stopPropagation();
                 this.touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+                touchStartTime = Date.now();
                 this.pauseAutoPlay();
-            });
+            }, { passive: false });
+            
+            img.addEventListener('touchmove', (e) => {
+                e.stopPropagation();
+                // Permitir scroll vertical mas prevenir scroll horizontal
+                const touchY = e.touches[0].clientY;
+                const touchX = e.touches[0].clientX;
+                const deltaY = Math.abs(touchY - touchStartY);
+                const deltaX = Math.abs(touchX - this.touchStartX);
+                
+                if (deltaX > deltaY) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
             
             img.addEventListener('touchend', (e) => {
                 e.stopPropagation();
                 this.touchEndX = e.changedTouches[0].clientX;
+                const touchEndTime = Date.now();
+                const touchDuration = touchEndTime - touchStartTime;
                 
-                // Verificar se foi um clique simples (sem movimento)
+                // Verificar se foi um clique simples (sem movimento e duração curta)
                 const touchDistance = Math.abs(this.touchEndX - this.touchStartX);
-                if (touchDistance < 10) {
+                if (touchDistance < 15 && touchDuration < 300) {
                     // Foi um clique, abrir modal
-                    this.openModal(img.src, img.alt);
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    setTimeout(() => {
+                        this.openModal(img.src, img.alt);
+                    }, 100);
                 } else {
                     // Foi um swipe
                     this.handleSwipe();
@@ -193,7 +230,7 @@ class Carousel {
                         this.resumeAutoPlay();
                     }
                 }, 3000);
-            });
+            }, { passive: false });
         });
         
         // Eventos para indicadores
@@ -237,11 +274,11 @@ class Carousel {
             e.stopPropagation();
             this.touchStartX = e.touches[0].clientX;
             this.pauseAutoPlay();
-        });
+        }, { passive: false });
         
         this.container.addEventListener('touchmove', (e) => {
             e.stopPropagation();
-        });
+        }, { passive: false });
         
         this.container.addEventListener('touchend', (e) => {
             e.stopPropagation();
@@ -253,7 +290,7 @@ class Carousel {
                     this.resumeAutoPlay();
                 }
             }, 3000);
-        });
+        }, { passive: false });
         
         // Evitar interferência com scroll da página
         this.container.addEventListener('wheel', (e) => {
@@ -377,6 +414,11 @@ class Carousel {
         
         // Pausar o carrossel quando o modal estiver aberto
         this.pauseAutoPlay();
+        
+        // Forçar o foco no modal para dispositivos móveis
+        setTimeout(() => {
+            this.modal.focus();
+        }, 100);
     }
     
     closeModal() {

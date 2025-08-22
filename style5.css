@@ -50,11 +50,15 @@
 }
 
  /* Reset e configurações globais */
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
+html {
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
  body {
      font-family: "Inconsolata", monospace;
@@ -738,7 +742,8 @@
          body {
              transform: scale(0.67);
              transform-origin: top left;
-             width: 149.2537313433vw;
+             width: 100vw;
+             max-width: 149.2537313433vw;
              /* 1 / 0.67 */
          }
      }

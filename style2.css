@@ -50,6 +50,10 @@
 }
 
 /* Reset e configurações globais */
+html {
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -185,7 +189,8 @@ a:hover {
         body {
             transform: scale(0.67);
             transform-origin: top left;
-            width: 149.2537313433vw; /* 1 / 0.67 */
+            width: 100vw;
+            max-width: 149.2537313433vw; /* 1 / 0.67 */
         }
     }
 }
@@ -1261,6 +1266,7 @@ a:hover {
         opacity: 0;
         transition: opacity 0.3s ease;
         overflow: hidden;
+        touch-action: manipulation;
     }
 
     .image-modal.active {
@@ -1280,6 +1286,7 @@ a:hover {
         max-height: 100%;
         border-radius: 8px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        touch-action: manipulation;
     }
 
     .modal-close {
@@ -1295,6 +1302,8 @@ a:hover {
         border-radius: 50%;
         cursor: pointer;
         transition: all 0.3s ease;
+        min-width: 44px;
+        min-height: 44px;
     }
 
     .modal-close:hover {
@@ -1319,6 +1328,29 @@ a:hover {
 
     .carousel-info strong {
         color: white;
+    }
+    
+    /* Melhorias para dispositivos móveis */
+    .image-modal {
+        touch-action: manipulation;
+    }
+    
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+        max-height: 95%;
     }
 }
 
