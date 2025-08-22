@@ -39,7 +39,7 @@
     <main>
         <section class="regras" aria-labelledby="regras-titulo">
             <section class="bg-1-2">
-                <h1 id="regras-titulo">Materiais Físicos – Netwars</h1>
+                <h1 id="regras-titulo">Materiais Físicos Netwars</h1>
 
                 <div class="primeiro">
                     <div class="barra-vertical" aria-hidden="true"></div>
@@ -108,6 +108,7 @@
     </button>
 
     <script src="mobile-navbar.js"></script>
+    <script src="carousel.js"></script>
     <script>
         // Script para o botão voltar ao topo
         const backToTopButton = document.getElementById('backToTop');
@@ -128,6 +129,23 @@
                 behavior: 'smooth'
             });
         });
+
+        // Script para modal do mapa (igual às cartas)
+        const mapaImg = document.querySelector('.mapa img');
+        
+        if (mapaImg) {
+            mapaImg.addEventListener('click', function() {
+                // Usar o mesmo modal das cartas
+                const modal = document.querySelector('.image-modal');
+                const modalImage = document.querySelector('.modal-image');
+                
+                if (modal && modalImage) {
+                    modalImage.src = this.src;
+                    modalImage.alt = this.alt;
+                    modal.classList.add('active');
+                }
+            });
+        }
     </script>
 </body>
 

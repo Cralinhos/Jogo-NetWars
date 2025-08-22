@@ -56,22 +56,56 @@
      box-sizing: border-box;
  }
 
+ html {
+     scroll-behavior: smooth;
+     overflow-x: hidden;
+     overflow-y: auto;
+     height: 100%;
+ }
+
  body {
      font-family: "Inconsolata", monospace;
      line-height: 1.6;
      overflow-x: hidden;
+     overflow-y: auto;
+     min-height: 100vh;
+     height: 100%;
+     position: relative;
  }
 
  /* Links */
- a {
-     color: #ffff;
-     text-decoration: none;
-     transition: 0.3s;
- }
+a {
+    color: #ffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
 
- a:hover {
-     opacity: 0.7;
- }
+a:hover {
+    opacity: 0.7;
+}
+
+/* Estilos para o mapa (todas as telas) */
+.mapa {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.mapa img {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mapa img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
 
  /* Header e Navegação */
  .logo .logo-img {
@@ -482,7 +516,7 @@
 
      .regras p {
          font-size: 18px;
-         text-align: center;
+         text-align: justify;
          margin-left: 0;
      }
 
@@ -571,7 +605,7 @@
 
  @media (max-width: 480px) {
      .regras h1 {
-         font-size: 40px;
+         font-size: 30px;
      }
 
      .regras h2 {
@@ -1041,5 +1075,204 @@
     .nav-list li a {
         font-size: 15px;
         padding: 6px 10px;
+    }
+}
+
+/* Carrossel automático para telas menores */
+@media (max-width: 768px) {
+    .cartas,
+    .peças {
+        position: relative;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 350px;
+        padding: 20px 0;
+        margin: 20px 0;
+        z-index: 1;
+        pointer-events: auto;
+    }
+
+    .cartas-container,
+    .peças-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 250px;
+        position: relative;
+        overflow: visible;
+        pointer-events: auto;
+        touch-action: pan-y;
+    }
+
+    .cartas img,
+    .peças img {
+        position: absolute;
+        min-width: 180px;
+        max-width: 180px;
+        height: auto;
+        cursor: pointer;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        z-index: 1;
+        filter: brightness(0.7);
+        left: 45%;
+        top: 50%;
+        transform: translate(-50%, -50%) translateX(0);
+    }
+
+    .cartas img.active,
+    .peças img.active {
+        opacity: 1;
+        transform: translate(-50%, -50%) translateX(0);
+        z-index: 2;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        filter: brightness(1);
+    }
+
+    .cartas img.prev,
+    .peças img.prev {
+        transform: translate(-50%, -50%) translateX(-180px);
+        opacity: 0.4;
+        filter: brightness(0.6);
+    }
+
+    .cartas img.next,
+    .peças img.next {
+        transform: translate(-50%, -50%) translateX(180px);
+        opacity: 0.4;
+        filter: brightness(0.6);
+    }
+
+    /* Indicadores do carrossel - OCULTOS */
+    .carousel-indicators {
+        display: none !important;
+    }
+
+    .carousel-indicator {
+        display: none !important;
+    }
+
+    /* Controles do carrossel - OCULTOS */
+    .carousel-controls {
+        display: none !important;
+    }
+
+    .carousel-btn {
+        display: none !important;
+    }
+
+    /* Modal para ampliar imagem */
+    .image-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        overflow: hidden;
+    }
+
+    .image-modal.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    .modal-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        text-align: center;
+    }
+
+    .modal-image {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-close {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .modal-close:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.1);
+    }
+
+    /* Pausar animação quando usuário interage */
+    .cartas.paused .cartas-container,
+    .peças.paused .peças-container {
+        animation-play-state: paused;
+    }
+
+    /* Mensagem informativa do carrossel - OCULTA */
+    .carousel-info {
+        display: none !important;
+    }
+
+
+}
+
+/* Carrossel para telas muito pequenas */
+@media (max-width: 480px) {
+    .cartas,
+    .peças {
+        height: 300px;
+    }
+
+    .cartas-container,
+    .peças-container {
+        height: 200px;
+    }
+
+    .cartas img,
+    .peças img {
+        min-width: 140px;
+        max-width: 140px;
+    }
+
+    .cartas img.prev,
+    .peças img.prev {
+        transform: translate(-50%, -50%) translateX(-130px);
+    }
+
+    .cartas img.next,
+    .peças img.next {
+        transform: translate(-50%, -50%) translateX(130px);
+    }
+
+    .carousel-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .carousel-indicator {
+        display: none !important;
+    }
+
+    .carousel-info {
+        display: none !important;
     }
 }

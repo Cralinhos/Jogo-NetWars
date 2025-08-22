@@ -58,7 +58,7 @@ class MobileNavbar {
       document.removeEventListener('click', this.handleOutsideClick);
       document.removeEventListener('keydown', this.handleEscapeKey);
       // Restaurar scroll do body
-      document.body.style.overflow = '';
+      document.body.style.overflow = 'auto';
     }
   }
 
@@ -115,6 +115,10 @@ class MobileNavbar {
 
 // Inicializar quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', () => {
+  // Garantir que o scroll esteja habilitado
+  document.body.style.overflow = 'auto';
+  document.documentElement.style.overflow = 'auto';
+  
   const mobileNavbar = new MobileNavbar(
     ".mobile-menu",
     ".nav-list",
@@ -141,3 +145,32 @@ if (!document.querySelector('#nav-animations')) {
   `;
   document.head.appendChild(style);
 }
+
+// Garantir que o scroll funcione corretamente
+window.addEventListener('load', () => {
+  document.body.style.overflow = 'auto';
+  document.documentElement.style.overflow = 'auto';
+});
+
+// Garantir que o scroll seja restaurado se houver algum problema
+window.addEventListener('scroll', () => {
+  if (document.body.style.overflow === 'hidden' && !document.querySelector('.nav-list.active')) {
+    document.body.style.overflow = 'auto';
+  }
+});
+
+// Garantir que o scroll funcione corretamente em todas as situações
+window.addEventListener('resize', () => {
+  if (!document.querySelector('.nav-list.active')) {
+    document.body.style.overflow = 'auto';
+    document.documentElement.style.overflow = 'auto';
+  }
+});
+
+// Garantir que o scroll seja restaurado quando a página ganha foco
+window.addEventListener('focus', () => {
+  if (!document.querySelector('.nav-list.active')) {
+    document.body.style.overflow = 'auto';
+    document.documentElement.style.overflow = 'auto';
+  }
+});
