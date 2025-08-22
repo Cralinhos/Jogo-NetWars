@@ -206,14 +206,23 @@ class Carousel {
             });
         }
         
-        // Pausar quando usuário interage com o container
+        // Variáveis para detectar swipe
+        this.touchStartX = 0;
+        this.touchEndX = 0;
+        this.minSwipeDistance = 50; // Distância mínima para considerar um swipe
+        
+        // Eventos de touch para swipe
         this.container.addEventListener('touchstart', (e) => {
             e.stopPropagation();
+            this.touchStartX = e.changedTouches[0].screenX;
             this.pauseAutoPlay();
         });
         
         this.container.addEventListener('touchend', (e) => {
             e.stopPropagation();
+            this.touchEndX = e.changedTouches[0].screenX;
+            this.handleSwipe();
+            
             setTimeout(() => {
                 if (!this.isPaused) {
                     this.resumeAutoPlay();
@@ -225,6 +234,20 @@ class Carousel {
         this.container.addEventListener('wheel', (e) => {
             e.stopPropagation();
         });
+    }
+    
+    handleSwipe() {
+        const swipeDistance = this.touchEndX - this.touchStartX;
+        
+        if (Math.abs(swipeDistance) > this.minSwipeDistance) {
+            if (swipeDistance > 0) {
+                // Swipe para direita - imagem anterior
+                this.prev();
+            } else {
+                // Swipe para esquerda - próxima imagem
+                this.next();
+            }
+        }
     }
     
     showImage(index) {

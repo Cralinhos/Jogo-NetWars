@@ -67,7 +67,7 @@ body {
     font-family: "Inconsolata", monospace;
     line-height: 1.6;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: none;
     min-height: 100vh;
     height: 100%;
     position: relative;
