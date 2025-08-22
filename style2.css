@@ -1165,7 +1165,7 @@ a:hover {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        left: -5%; /* ADDED: Move container slightly to the left */
+        left: -8%; /* Aumentado para dispositivos como Redmi Note 8 */
     }
 
     .cartas img,
@@ -1374,6 +1374,7 @@ a:hover {
     .cartas-container,
     .peças-container {
         height: 200px;
+        left: -10%; /* Ajuste específico para telas muito pequenas */
     }
 
     .cartas img,
@@ -1396,14 +1397,17 @@ a:hover {
         padding: 6px 12px;
         font-size: 12px;
     }
+}
 
-    .carousel-indicator {
-        width: 6px;
-        height: 6px;
+/* Ajuste específico para dispositivos como Redmi Note 8 */
+@media (min-width: 400px) and (max-width: 500px) {
+    .cartas-container,
+    .peças-container {
+        left: -12%; /* Ajuste específico para Redmi Note 8 */
     }
-
-    .carousel-info {
-        font-size: 12px;
-        margin-top: 8px;
+    
+    .cartas img.active,
+    .peças img.active {
+        left: 48% !important; /* Ajuste fino para centralização */
     }
 }
