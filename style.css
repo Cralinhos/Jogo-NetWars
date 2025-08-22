@@ -456,12 +456,14 @@ a:hover {
         background: #1B004D;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        padding-top: 100px;
         transform: translateX(100%);
         transition: all 0.3s ease-in-out;
         z-index: 1000;
         opacity: 0;
         visibility: hidden;
+        overflow-y: auto;
     }
 
     .nav-list.active {
@@ -471,7 +473,7 @@ a:hover {
     }
 
     .nav-list li {
-        margin: 20px 0;
+        margin: 12px 0;
         opacity: 0;
         transform: translateX(50px);
         transition: all 0.3s ease-in-out;
@@ -483,8 +485,8 @@ a:hover {
     }
 
     .nav-list li a {
-        font-size: 18px;
-        padding: 15px 20px;
+        font-size: 16px;
+        padding: 12px 15px;
         display: block;
         width: 100%;
         text-align: center;
@@ -552,7 +554,7 @@ a:hover {
     }
 
     .objetivos h2 {
-        font-size: 70px;
+        font-size: 48px;
         padding: 20px;
     }
 
@@ -561,12 +563,12 @@ a:hover {
     }
 
     .objetivos h3 {
-        font-size: 34px;
+        font-size: 28px;
         text-align: center;
     }
 
     .objetivos p {
-        font-size: 20px;
+        font-size: 18px;
         text-align: center;
     }
 
@@ -581,17 +583,17 @@ a:hover {
     }
 
     .faq h2 {
-        font-size: 70px;
+        font-size: 48px;
         padding: 20px;
     }
 
     .faq h3 {
-        font-size: 34px;
+        font-size: 28px;
         text-align: center;
     }
 
     .faq p {
-        font-size: 20px;
+        font-size: 18px;
         text-align: center;
         max-width: 100%;
         margin: 0 20px;
@@ -650,7 +652,7 @@ a:hover {
     }
 
     .texto-logo p {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     /* Melhorias para o menu mobile em tablets */
@@ -663,6 +665,23 @@ a:hover {
 @media (max-width: 480px) {
     .Inicio {
         padding-top: 50px;
+    }
+
+    /* Otimizações específicas para o menu mobile em telas pequenas */
+    .nav-list {
+        justify-content: flex-start;
+        padding-top: 80px;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .nav-list li {
+        margin: 8px 0;
+    }
+
+    .nav-list li a {
+        font-size: 14px;
+        padding: 10px 12px;
     }
 
     .faq .barra-lateral {
@@ -678,11 +697,11 @@ a:hover {
     }
 
     .titulo {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .textomenor {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .barra {
@@ -690,31 +709,33 @@ a:hover {
     }
 
     .objetivos h2 {
-        font-size: 50px;
+        font-size: 30px;
     }
 
     .objetivos h3 {
-        font-size: 28px;
+        font-size: 17px;
+        text-align: center;
     }
 
     .objetivos p {
-        font-size: 18px;
+        font-size: 16px;
+        text-align: justify;
     }
 
     .faq h2 {
-        font-size: 50px;
+        font-size: 30px;
     }
 
     .faq h3 {
-        font-size: 28px;
+        font-size: 17px;
     }
 
     .faq p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .rodape-final {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .logo-imagem .imagem-logo {
@@ -724,13 +745,7 @@ a:hover {
     }
 
     .texto-logo p {
-        font-size: 18px;
-    }
-
-    /* Melhorias para o menu mobile em dispositivos pequenos */
-    .nav-list li a {
-        font-size: 14px;
-        padding: 10px 15px;
+        font-size: 16px;
     }
 
     .mobile-menu {
@@ -741,6 +756,75 @@ a:hover {
     .mobile-menu div {
         width: 28px;
         height: 2px;
+    }
+}
+
+/* Regras específicas para telas muito pequenas (320px x 560px) */
+@media (max-width: 360px) {
+    .nav-list {
+        padding-top: 60px;
+        justify-content: flex-start;
+    }
+
+    .nav-list li {
+        margin: 6px 0;
+    }
+
+    .nav-list li a {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .mobile-menu {
+        width: 24px;
+        height: 24px;
+    }
+
+    .mobile-menu div {
+        width: 24px;
+        height: 2px;
+    }
+
+    .menu {
+        height: 10vh;
+        padding: 10px 15px;
+    }
+
+    .logo .logo-img {
+        width: 100px;
+    }
+}
+
+/* Regras específicas para telas com altura limitada */
+@media (max-height: 600px) {
+    .nav-list {
+        padding-top: 80px;
+        justify-content: flex-start;
+    }
+
+    .nav-list li {
+        margin: 4px 0;
+    }
+
+    .nav-list li a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+/* Regras específicas para dispositivos com tela muito pequena e altura limitada */
+@media (max-width: 360px) and (max-height: 600px) {
+    .nav-list {
+        padding-top: 30px;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+
+    .nav-list li a {
+        font-size: 15px;
+        padding: 6px 10px;
     }
 }
 
@@ -902,17 +986,17 @@ a:hover {
     }
 
     /* Seção Objetivos como no desktop */
-    .objetivos h2 { font-size: 96px; padding: 40px; }
+    .objetivos h2 { font-size: 72px; padding: 40px; }
     .barra-vertical { display: block; }
-    .objetivos h3 { font-size: 48px; text-align: left; }
-    .objetivos p { font-size: 25px; text-align: left; }
+    .objetivos h3 { font-size: 40px; text-align: left; }
+    .objetivos p { font-size: 22px; text-align: left; }
     .objetivos div { margin-left: 120px; margin-right: 0; }
-    .rodape blockquote { font-size: 32px; padding: 30px; }
+    .rodape blockquote { font-size: 28px; padding: 30px; }
 
     /* Seção FAQ como no desktop */
-    .faq h2 { font-size: 96px; padding: 40px; }
-    .faq h3 { font-size: 48px; text-align: left; }
-    .faq p { font-size: 25px; text-align: left; max-width: 1900px; margin: 0; }
+    .faq h2 { font-size: 72px; padding: 40px; }
+    .faq h3 { font-size: 40px; text-align: left; }
+    .faq p { font-size: 22px; text-align: left; max-width: 1900px; margin: 0; }
     .faq div { margin-left: 120px; margin-right: 0; }
     .barra-lateral {
         position: relative;
@@ -996,16 +1080,16 @@ a:hover {
     }
     
     .objetivos h2 {
-        font-size: 70px;
+        font-size: 56px;
         padding: 25px;
     }
     
     .objetivos h3 {
-        font-size: 36px;
+        font-size: 32px;
     }
     
     .objetivos p {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .objetivos div {
@@ -1013,16 +1097,16 @@ a:hover {
     }
     
     .faq h2 {
-        font-size: 70px;
+        font-size: 56px;
         padding: 25px;
     }
     
     .faq h3 {
-        font-size: 36px;
+        font-size: 32px;
     }
     
     .faq p {
-        font-size: 20px;
+        font-size: 18px;
         max-width: 1400px;
     }
     
