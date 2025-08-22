@@ -189,6 +189,7 @@ html {
  }
 
  .regras h2 {
+     text-align: left;
      margin-left: 220px;
      font-family: "Kdam Thmor Pro", sans-serif;
      font-size: 48px;
@@ -201,25 +202,39 @@ html {
      font-size: 32px;
      font-weight: 500;
      margin-bottom: 15px;
+     text-align: center;
  }
 
  .regras p {
+     text-align: justify;
      margin-left: 220px;
      font-family: "Inconsolata", monospace;
      font-size: 25px;
      font-weight: 200;
      line-height: 1.5;
      margin-bottom: 20px;
+     max-width: 1200px;
+ }
+
+ /* Texto de introdução centralizado */
+ .intro-text {
+     text-align: center !important;
+     margin-left: auto !important;
+     margin-right: auto !important;
+     max-width: 1200px !important;
  }
 
  /* Estrutura das seções */
  .primeiro,
  .segundo,
  .terceiro,
- .quarto {
+ .quarto {  
      position: relative;
      margin-bottom: 40px;
      max-width: 1800px;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 0 20px;
  }
 
  /* Barra vertical para seção 1 - Objetivo do Jogo (texto curto) */
@@ -229,7 +244,7 @@ html {
      top: 14px;
      left: 196px;
      width: 2px;
-     height: 188px;
+     height: 238px;
      background-color: white;
      border-radius: 3px;
  }
@@ -247,10 +262,9 @@ html {
      align-items: center;
      gap: 20px;
      padding: 50px;
-     flex-wrap: nowrap;
+     flex-wrap: wrap;
      max-width: 100%;
      overflow-x: auto;
-     min-width: 1200px;
  }
 
  .mapa {
@@ -374,8 +388,8 @@ html {
  /* Responsividade */
  @media (max-width: 1200px) {
      .regras div {
-         margin-left: 100px;
-         margin-right: 100px;
+         margin: 0 auto;
+         padding: 0 20px;
      }
 
      .peças,
@@ -463,24 +477,31 @@ html {
 
      .regras h2 {
          font-size: 28px;
-         text-align: center;
+         text-align: left;
          margin-left: 0;
      }
 
      .regras h3 {
          font-size: 24px;
-         text-align: center;
+         text-align: left;
+         margin-left: 0;
      }
 
      .regras p {
          font-size: 18px;
-         text-align: center;
+         text-align: justify;
          margin-left: 0;
      }
 
+     .intro-text {
+         text-align: center !important;
+         margin-left: auto !important;
+         margin-right: auto !important;
+     }
+
      .regras div {
-         margin-left: 20px;
-         margin-right: 20px;
+         margin: 0 auto;
+         padding: 0 20px;
      }
 
      .primeiro::before,
@@ -538,8 +559,8 @@ html {
 
  @media (max-width: 768px) {
      .regras div {
-         margin-left: 15px;
-         margin-right: 15px;
+         margin: 0 auto;
+         padding: 0 15px;
      }
 
      .peças,
@@ -568,15 +589,27 @@ html {
 
      .regras h2 {
          font-size: 24px;
+         text-align: left;
+         margin-left: 0;
      }
 
      .regras h3 {
          font-size: 20px;
+         text-align: left;
+         margin-left: 0;
      }
 
      .regras p {
         text-align: justify;
         font-size: 16px;
+        margin-left: 0;
+     }
+
+     .intro-text {
+         text-align: center !important;
+         margin-left: auto !important;
+         margin-right: auto !important;
+         font-size: 16px !important;
      }
 
      .peças,
@@ -767,9 +800,9 @@ html {
     }
     
     .nav-list li {
-        margin-left: 40px;
-        font-size: 18px;
-        letter-spacing: 4px;
+        margin: 0 0 0 50px;
+        font-size: 20px;
+        letter-spacing: 5px;
     }
     
     .Contato {
@@ -788,11 +821,15 @@ html {
     .regras h2 {
         font-size: 56px;
         margin-bottom: 25px;
+        text-align: left;
+        margin-left: 300px;
     }
     
     .regras h3 {
         font-size: 38px;
         margin-bottom: 20px;
+        text-align: left;
+        margin-left: 300px;
     }
     
     .regras p {
@@ -800,13 +837,21 @@ html {
         line-height: 1.6;
         margin-bottom: 25px;
         max-width: 1600px;
+        text-align: justify;
+        margin-left: 300px;
+    }
+
+    .intro-text {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        font-size: 28px !important;
     }
     
     .regras div {
-        margin-left: 300px;
-        margin-right: 300px;
-        margin-bottom: 50px;
+        margin: 0 auto 50px;
         max-width: 1800px;
+        padding: 0 40px;
     }
     
     /* Seções de módulos otimizadas */
@@ -869,7 +914,7 @@ html {
     }
     
     .nav-list li {
-        margin-left: 50px;
+        margin: 0 0 0 50px;
         font-size: 20px;
         letter-spacing: 5px;
     }
@@ -890,11 +935,15 @@ html {
     .regras h2 {
         font-size: 64px;
         margin-bottom: 30px;
+        text-align: left;
+        margin-left: 400px;
     }
     
     .regras h3 {
         font-size: 42px;
         margin-bottom: 25px;
+        text-align: left;
+        margin-left: 400px;
     }
     
     .regras p {
@@ -902,13 +951,21 @@ html {
         line-height: 1.7;
         margin-bottom: 30px;
         max-width: 2000px;
+        text-align: justify;
+        margin-left: 400px;
+    }
+
+    .intro-text {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        font-size: 32px !important;
     }
     
     .regras div {
-        margin-left: 400px;
-        margin-right: 400px;
-        margin-bottom: 60px;
+        margin: 0 auto 60px;
         max-width: 2200px;
+        padding: 0 60px;
     }
     
     /* Seções de módulos para telas muito grandes */
