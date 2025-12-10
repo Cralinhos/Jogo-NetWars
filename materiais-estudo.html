@@ -398,27 +398,7 @@
     </button>
 
     <script src="mobile-navbar.js"></script>
-    <script>
-        // Script para o botão voltar ao topo
-        const backToTopButton = document.getElementById('backToTop');
-        
-        // Mostrar/esconder o botão baseado no scroll
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-        
-        // Função para voltar ao topo
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>

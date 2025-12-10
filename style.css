@@ -228,7 +228,7 @@ header {
 
 /* Seção Inicial */
 .Inicio {
-    background: url(Images/Bg.png) no-repeat center center;
+    background: url(Images/Bg-centro.png) no-repeat center center;
     background-size: cover;
     background-attachment: scroll;
     min-height: 100vh;
@@ -318,6 +318,85 @@ header {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+}
+
+/* Responsividade - ajustes de centralização e espaçamento */
+@media (max-width: 1024px) {
+    .Inicio {
+        align-items: center;
+        justify-content: center;
+        padding: 120px 16px 80px;
+        background-position: center center;
+    }
+
+    .main-text {
+        min-height: auto;
+        padding: 0 12px;
+    }
+
+    .titulo {
+        font-size: 26px;
+    }
+
+    .barra {
+        width: min(320px, 70%);
+    }
+
+    .barra-com-textomenor {
+        gap: 10px;
+    }
+
+    .explicacao-jogo {
+        flex-direction: column;
+        padding: 60px 24px;
+        gap: 32px;
+        text-align: center;
+    }
+
+    .imagem1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .imagem1 .aimagem {
+        width: min(480px, 100%);
+    }
+
+    .logo-imagem {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo-imagem .imagem-logo {
+        margin-left: 0;
+        bottom: 0;
+        width: min(280px, 70vw);
+    }
+}
+
+@media (max-width: 600px) {
+    .Inicio {
+        padding: 120px 12px 72px;
+    }
+
+    .titulo {
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .barra {
+        width: 180px;
+    }
+
+    .textomenor {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .explicacao-jogo {
+        padding: 48px 16px;
+        gap: 24px;
+    }
 }
 
 .texto-logo p {
@@ -668,6 +747,10 @@ header {
 @media (max-width: 768px) {
     .Inicio {
         padding-top: 60px;
+        background-position: center center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-color: #06001f;
     }
 
     .main-text {
@@ -2092,7 +2175,6 @@ header {
         /* Otimizações de scroll para Safari */
         .nav-list {
             -webkit-overflow-scrolling: touch;
-            overflow-scrolling: touch;
         }
         
         /* Melhor suporte para elementos fixos no Safari */

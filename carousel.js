@@ -2,6 +2,7 @@
 class Carousel {
     constructor(container, options = {}) {
         this.container = container;
+        this.originalContent = container.innerHTML;
         this.images = container.querySelectorAll('img');
         this.currentIndex = 0;
         this.autoPlayInterval = null;
@@ -300,26 +301,15 @@ class Carousel {
     
     handleSwipe() {
         const swipeDistance = this.touchEndX - this.touchStartX;
-        
-        console.log('Swipe detectado:', {
-            start: this.touchStartX,
-            end: this.touchEndX,
-            distance: swipeDistance,
-            minDistance: this.minSwipeDistance
-        });
-        
+
         if (Math.abs(swipeDistance) > this.minSwipeDistance) {
             if (swipeDistance > 0) {
                 // Swipe para direita - imagem anterior
-                console.log('Swipe para direita - imagem anterior');
                 this.prev();
             } else {
                 // Swipe para esquerda - próxima imagem
-                console.log('Swipe para esquerda - próxima imagem');
                 this.next();
             }
-        } else {
-            console.log('Swipe muito pequeno, ignorado');
         }
     }
     
@@ -405,7 +395,6 @@ class Carousel {
     }
     
     openModal(src, alt) {
-        console.log('Abrindo modal:', src, alt);
         const modalImage = this.modal.querySelector('.modal-image');
         modalImage.src = src;
         modalImage.alt = alt;
@@ -422,7 +411,6 @@ class Carousel {
     }
     
     closeModal() {
-        console.log('Fechando modal');
         this.modal.classList.remove('active');
         document.body.style.overflow = '';
         
@@ -431,61 +419,61 @@ class Carousel {
             this.resumeAutoPlay();
         }, 1000);
     }
+
+    destroy() {
+        this.stopAutoPlay();
+        this.container.classList.remove('paused');
+        this.container.innerHTML = this.originalContent;
+    }
 }
 
-// Inicializar carrosséis quando o DOM estiver carregado
+const carouselInstances = [];
+let isMobileView = window.innerWidth <= 768;
+
+const createMobileCarousel = (selector) => {
+    const defaultOptions = {
+        interval: 3000,
+        autoPlay: true,
+        showIndicators: false,
+        showControls: false
+    };
+
+    document.querySelectorAll(selector).forEach((container) => {
+        const images = container.querySelectorAll('img');
+        if (images.length > 1) {
+            const instance = new Carousel(container, defaultOptions);
+            carouselInstances.push(instance);
+        }
+    });
+};
+
+const destroyCarousels = () => {
+    while (carouselInstances.length) {
+        const instance = carouselInstances.pop();
+        instance.destroy();
+    }
+};
+
+const initCarousels = () => {
+    createMobileCarousel('.cartas');
+    createMobileCarousel('.peças');
+};
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Verificar se estamos em uma tela menor
-    const isMobile = window.innerWidth <= 768;
-    
-    if (isMobile) {
-        // Inicializar carrossel para cartas
-        const cartasContainers = document.querySelectorAll('.cartas');
-        cartasContainers.forEach(container => {
-            const images = container.querySelectorAll('img');
-            if (images.length > 1) {
-                new Carousel(container, {
-                    interval: 3000,
-                    autoPlay: true,
-                    showIndicators: false,
-                    showControls: false
-                });
-            }
-        });
-        
-        // Inicializar carrossel para peças
-        const pecasContainers = document.querySelectorAll('.peças');
-        pecasContainers.forEach(container => {
-            const images = container.querySelectorAll('img');
-            if (images.length > 1) {
-                new Carousel(container, {
-                    interval: 3000,
-                    autoPlay: true,
-                    showIndicators: false,
-                    showControls: false
-                });
-            }
-        });
+    if (isMobileView) {
+        initCarousels();
     }
 });
 
-// Reinicializar carrosséis quando a janela for redimensionada
 window.addEventListener('resize', () => {
-    const isMobile = window.innerWidth <= 768;
-    
-    if (isMobile) {
-        // Remover carrosséis existentes
-        document.querySelectorAll('.cartas-container, .peças-container').forEach(container => {
-            container.remove();
-        });
-        
-        document.querySelectorAll('.carousel-indicators, .carousel-controls').forEach(container => {
-            container.remove();
-        });
-        
-        // Recarregar a página para reinicializar
-        setTimeout(() => {
-            location.reload();
-        }, 100);
+    const currentlyMobile = window.innerWidth <= 768;
+    if (currentlyMobile === isMobileView) return;
+
+    isMobileView = currentlyMobile;
+
+    if (!isMobileView) {
+        destroyCarousels();
+    } else {
+        initCarousels();
     }
 });

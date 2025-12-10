@@ -27,6 +27,61 @@
     transform: translateY(20px);
 }
 
+/* Responsividade - centralização e espaçamento */
+@media (max-width: 1024px) {
+    .menu {
+        flex-wrap: wrap;
+        gap: 12px;
+        height: auto;
+    }
+
+    .nav-list {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .regras h1 {
+        font-size: 56px;
+        padding: 24px 16px;
+    }
+
+    .regras h2,
+    .regras p {
+        margin-left: 0;
+        padding: 0 16px;
+        text-align: center;
+    }
+
+    .cartas,
+    .peças,
+    .mapa {
+        padding: 30px 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cartas img,
+    .peças img {
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .regras h1 {
+        font-size: 42px;
+    }
+
+    .regras h2 {
+        font-size: 28px;
+    }
+
+    .regras p {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+}
+
 .back-to-top.show {
     display: flex;
     opacity: 1;
@@ -1685,7 +1740,6 @@ a:hover {
         .cartas,
         .peças {
             -webkit-overflow-scrolling: touch;
-            overflow-scrolling: touch;
         }
 
         /* Melhor suporte para elementos fixos no Safari no carrossel */

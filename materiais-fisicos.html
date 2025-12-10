@@ -109,41 +109,51 @@
 
     <script src="mobile-navbar.js"></script>
     <script src="carousel.js"></script>
+    <script src="main.js"></script>
     <script>
-        // Script para o botão voltar ao topo
-        const backToTopButton = document.getElementById('backToTop');
-        
-        // Mostrar/esconder o botão baseado no scroll
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-        
-        // Função para voltar ao topo
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Script para modal do mapa (igual às cartas)
         const mapaImg = document.querySelector('.mapa img');
-        
+
+        const ensureImageModal = () => {
+            let modal = document.querySelector('.image-modal');
+
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.className = 'image-modal';
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <button class="modal-close" aria-label="Fechar imagem">&times;</button>
+                        <img class="modal-image" src="" alt="Imagem ampliada">
+                    </div>
+                `;
+                document.body.appendChild(modal);
+
+                modal.addEventListener('click', (event) => {
+                    if (event.target === modal || event.target.classList.contains('modal-close')) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape' && modal.classList.contains('active')) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            return modal;
+        };
+
         if (mapaImg) {
-            mapaImg.addEventListener('click', function() {
-                // Usar o mesmo modal das cartas
-                const modal = document.querySelector('.image-modal');
-                const modalImage = document.querySelector('.modal-image');
-                
-                if (modal && modalImage) {
-                    modalImage.src = this.src;
-                    modalImage.alt = this.alt;
-                    modal.classList.add('active');
-                }
+            const modal = ensureImageModal();
+            const modalImage = modal.querySelector('.modal-image');
+
+            mapaImg.addEventListener('click', () => {
+                modalImage.src = mapaImg.src;
+                modalImage.alt = mapaImg.alt;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
             });
         }
     </script>

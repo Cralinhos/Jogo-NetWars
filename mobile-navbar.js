@@ -9,6 +9,7 @@ class MobileNavbar {
     // Criar overlay se não existir
     this.createOverlay();
 
+    this.setScrollLocked = this.setScrollLocked.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
@@ -24,6 +25,12 @@ class MobileNavbar {
     } else {
       this.overlay = document.querySelector('.menu-overlay');
     }
+  }
+
+  setScrollLocked(locked) {
+    const value = locked ? 'hidden' : 'auto';
+    document.body.style.overflow = value;
+    document.documentElement.style.overflow = value;
   }
 
   animateLinks() {
@@ -52,13 +59,11 @@ class MobileNavbar {
     if (this.isOpen) {
       document.addEventListener('click', this.handleOutsideClick);
       document.addEventListener('keydown', this.handleEscapeKey);
-      // Prevenir scroll do body
-      document.body.style.overflow = 'hidden';
+      this.setScrollLocked(true);
     } else {
       document.removeEventListener('click', this.handleOutsideClick);
       document.removeEventListener('keydown', this.handleEscapeKey);
-      // Restaurar scroll do body
-      document.body.style.overflow = 'auto';
+      this.setScrollLocked(false);
     }
   }
 
@@ -145,32 +150,3 @@ if (!document.querySelector('#nav-animations')) {
   `;
   document.head.appendChild(style);
 }
-
-// Garantir que o scroll funcione corretamente
-window.addEventListener('load', () => {
-  document.body.style.overflow = 'auto';
-  document.documentElement.style.overflow = 'auto';
-});
-
-// Garantir que o scroll seja restaurado se houver algum problema
-window.addEventListener('scroll', () => {
-  if (document.body.style.overflow === 'hidden' && !document.querySelector('.nav-list.active')) {
-    document.body.style.overflow = 'auto';
-  }
-});
-
-// Garantir que o scroll funcione corretamente em todas as situações
-window.addEventListener('resize', () => {
-  if (!document.querySelector('.nav-list.active')) {
-    document.body.style.overflow = 'auto';
-    document.documentElement.style.overflow = 'auto';
-  }
-});
-
-// Garantir que o scroll seja restaurado quando a página ganha foco
-window.addEventListener('focus', () => {
-  if (!document.querySelector('.nav-list.active')) {
-    document.body.style.overflow = 'auto';
-    document.documentElement.style.overflow = 'auto';
-  }
-});
