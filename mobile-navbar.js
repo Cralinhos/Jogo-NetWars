@@ -120,8 +120,8 @@ class MobileNavbar {
 
 // Inicializar quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', () => {
-  // Garantir que o scroll esteja habilitado
-  document.body.style.overflow = 'auto';
+  // Garantir que o scroll esteja desabilitado
+  document.body.style.overflow = 'hidden';
   document.documentElement.style.overflow = 'auto';
   
   const mobileNavbar = new MobileNavbar(
