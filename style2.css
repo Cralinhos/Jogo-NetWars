@@ -27,6 +27,26 @@
     transform: translateY(20px);
 }
 
+.logos-rodape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.logos-rodape img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(1.1);
+    transition: transform 0.3s ease;
+}
+
+.logos-rodape img:hover {
+    transform: scale(1.05);
+}
+
 /* Responsividade - centralização e espaçamento */
 @media (max-width: 1024px) {
     .menu {
@@ -736,6 +756,7 @@ a:hover {
 /* Footer */
 .rodape-final {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: "Livvic", sans-serif;
@@ -746,6 +767,7 @@ a:hover {
     background: #1B004D;
     color: #ffff;
     padding: 20px;
+    gap: 20px;
 }
 
 /* Responsividade */

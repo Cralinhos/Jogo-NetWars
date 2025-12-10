@@ -440,6 +440,7 @@ body {
  /* Footer */
  .rodape-final {
      display: flex;
+     flex-direction: column;
      justify-content: center;
      align-items: center;
      font-family: "Livvic", sans-serif;
@@ -450,6 +451,7 @@ body {
      background: #1B004D;
      color: #ffff;
      padding: 20px;
+     gap: 20px;
  }
 
  /* Responsividade */
