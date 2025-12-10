@@ -105,8 +105,14 @@
 }
 
  /* Reset e configurações globais */
+/* Reset e configurações globais */
 html {
+    height: 100%;
     overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
 }
 
 * {
@@ -115,12 +121,19 @@ html {
     box-sizing: border-box;
 }
 
- body {
-     font-family: "Inconsolata", monospace;
-     line-height: 1.6;
-     overflow-x: hidden;
-     overflow-y: auto;
- }
+body {
+    font-family: "Inconsolata", monospace;
+    line-height: 1.6;
+    min-height: 100%;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    position: relative;
+    scrollbar-width: thin;
+    scrollbar-color: #3fe5ff #060911;
+    scroll-behavior: smooth;
+}
 
  /* Links */
  a {
@@ -1768,4 +1781,32 @@ html {
             backface-visibility: hidden;
         }
     }
+}
+
+/* ===== Scroll suave e barra personalizada ===== */
+/* Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #060911;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.45);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3fe5ff 0%, #6f45ff 100%);
+    border: 2px solid #060911;
+    border-radius: 12px;
+    box-shadow:
+        0 0 10px rgba(63, 229, 255, 0.35),
+        0 0 18px rgba(111, 69, 255, 0.28);
+    transition: background 200ms ease, box-shadow 200ms ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #5df0ff 0%, #8a62ff 100%);
+    box-shadow:
+        0 0 14px rgba(93, 240, 255, 0.45),
+        0 0 22px rgba(138, 98, 255, 0.35);
 }

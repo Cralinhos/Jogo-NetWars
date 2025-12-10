@@ -86,21 +86,24 @@ function initScrollAnimations() {
             y: 0,
             duration: 0.9,
             ease: 'power2.out',
-            delay
+            delay,
+            onComplete: () => {
+              entry.target.style.willChange = 'auto';
+            }
           });
           entry.target.dataset.animated = 'true';
           obs.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.2 }
+    { threshold: 0.1 }
   );
 
   elements.forEach((el, index) => {
     if (el.dataset.animated === 'true') return;
     gsap.set(el, { opacity: 0, y: 24 });
     el.style.willChange = 'opacity, transform';
-    el.dataset.animationDelay = (index * 0.05).toFixed(2);
+    el.dataset.animationDelay = (index * 0.02).toFixed(2);
     observer.observe(el);
   });
 }
@@ -164,9 +167,38 @@ function initPreloader(afterReveal) {
   }, 3000);
 }
 
-window.addEventListener('load', () => {
-  initPreloader(() => {
-    initScrollAnimations();
+// Registrar Service Worker para cache
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch((err) => {
+    console.log('Service Worker registration failed:', err);
   });
+}
+
+// Verificar se é primeira visita
+const isFirstVisit = !sessionStorage.getItem('netwars-visited');
+
+window.addEventListener('load', () => {
+  if (isFirstVisit) {
+    // Primeira visita: mostrar preloader
+    sessionStorage.setItem('netwars-visited', 'true');
+    initPreloader(() => {
+      initScrollAnimations();
+    });
+  } else {
+    // Visitas subsequentes: pular preloader
+    const pageContent = document.getElementById('pageContent');
+    const preloader = document.getElementById('preloader');
+    const body = document.body;
+    
+    if (preloader) preloader.remove();
+    if (pageContent) {
+      pageContent.removeAttribute('aria-hidden');
+      pageContent.style.opacity = '1';
+      pageContent.style.transform = 'none';
+    }
+    body.classList.remove('is-loading');
+    
+    initScrollAnimations();
+  }
 });
 

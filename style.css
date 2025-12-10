@@ -8,7 +8,7 @@
 html {
     height: 100%;
     overflow-x: hidden;
-    overflow-y: auto; /* apenas a raiz rola, evita segunda barra */
+    overflow-y: auto;
     position: relative;
 }
 
@@ -31,8 +31,7 @@ body {
     font-family: "Inconsolata", monospace;
     line-height: 1.6;
     min-height: 100%;
-    overflow-x: hidden;
-    overflow-y: visible; /* deixa o html controlar a rolagem */
+    overflow: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -531,6 +530,7 @@ header {
 /* Footer */
 .rodape-final {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: "Livvic", sans-serif;
@@ -541,6 +541,27 @@ header {
     background: #1B004D;
     color: #ffff;
     padding: 20px;
+    gap: 20px;
+}
+
+.logos-rodape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.logos-rodape img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(1.1);
+    transition: transform 0.3s ease;
+}
+
+.logos-rodape img:hover {
+    transform: scale(1.05);
 }
 
 /* Responsividade */
@@ -744,6 +765,14 @@ header {
         height: auto;
         min-height: 13vh;
     }
+
+    .logos-rodape {
+        gap: 30px;
+    }
+
+    .logos-rodape img {
+        height: 50px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -866,6 +895,14 @@ header {
 
     .rodape-final {
         font-size: 14px;
+    }
+
+    .logos-rodape {
+        gap: 20px;
+    }
+
+    .logos-rodape img {
+        height: 40px;
     }
 
     .logo-imagem .imagem-logo {
@@ -2222,6 +2259,8 @@ body.is-loading .page-content {
 [data-animate="fade-up"] {
     opacity: 1;
     transform: none;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
 }
 
 /* ===== Scroll suave e barra personalizada ===== */
