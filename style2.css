@@ -107,8 +107,7 @@
 /* Reset e configurações globais */
 html {
     height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
     position: relative;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
