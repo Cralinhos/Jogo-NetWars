@@ -6,7 +6,9 @@
 
 /* Reset e configurações globais */
 html {
+    height: 100%;
     overflow-x: hidden;
+    overflow-y: auto; /* apenas a raiz rola, evita segunda barra */
     position: relative;
 }
 
@@ -28,8 +30,9 @@ header {
 body {
     font-family: "Inconsolata", monospace;
     line-height: 1.6;
+    min-height: 100%;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: visible; /* deixa o html controlar a rolagem */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -252,7 +255,6 @@ header {
     width: 100%;
     padding: 0 20px;
     margin: 0 auto;
-    min-height: 60vh;
 }
 
 .titulo {
@@ -2185,4 +2187,78 @@ header {
             backface-visibility: hidden;
         }
     }
+}
+
+/* ===== Preloader e animações com GSAP ===== */
+body.is-loading {
+    overflow: hidden;
+}
+
+.page-content {
+    opacity: 1;
+    transform: none;
+}
+
+body.is-loading .page-content {
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 30% 30%, #0f1a2f 0%, #060911 50%, #02040a 100%);
+    z-index: 9999;
+}
+
+.preloader-logo {
+    width: clamp(160px, 20vw, 240px);
+    filter: drop-shadow(0 8px 24px rgba(0, 255, 255, 0.35));
+}
+
+[data-animate="fade-up"] {
+    opacity: 1;
+    transform: none;
+}
+
+/* ===== Scroll suave e barra personalizada ===== */
+html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+}
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: #3fe5ff #060911;
+    scroll-behavior: smooth; /* garante rolagem suave inclusive em body */
+}
+
+/* Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #060911;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.45);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3fe5ff 0%, #6f45ff 100%);
+    border: 2px solid #060911;
+    border-radius: 12px;
+    box-shadow:
+        0 0 10px rgba(63, 229, 255, 0.35),
+        0 0 18px rgba(111, 69, 255, 0.28);
+    transition: background 200ms ease, box-shadow 200ms ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #5df0ff 0%, #8a62ff 100%);
+    box-shadow:
+        0 0 14px rgba(93, 240, 255, 0.45),
+        0 0 22px rgba(138, 98, 255, 0.35);
 }

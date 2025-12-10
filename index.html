@@ -11,9 +11,16 @@
     <title>NetWars - Aprenda Redes de Computadores Jogando</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Images/Logo.png" type="image/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 </head>
 
-<body>
+<body class="is-loading">
+    <!-- Preloader -->
+    <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Carregando NetWars">
+        <img class="preloader-logo" src="Images/Logo.png" alt="Logo NetWars">
+    </div>
+
+    <div id="pageContent" class="page-content" aria-hidden="true">
     <header>
         <nav class="menu" role="navigation" aria-label="Menu principal">
             <a href="index.html" class="logo" aria-label="Página inicial NetWars">
@@ -37,7 +44,7 @@
     </header>
 
     <main>
-        <section class="Inicio" aria-labelledby="titulo-principal">
+        <section class="Inicio" aria-labelledby="titulo-principal" data-animate="fade-up">
             <div class="main-text">
                 <h1 id="titulo-principal" class="titulo">ESTUDE REDES DE COMPUTADORES DE UMA FORMA ÉPICA!</h1>
                 <div class="barra-com-textomenor">
@@ -47,12 +54,12 @@
             </div>
         </section>
 
-        <section class="explicacao-jogo" aria-labelledby="sobre-jogo">
-            <div class="imagem1">
+        <section class="explicacao-jogo" aria-labelledby="sobre-jogo" data-animate="fade-up">
+            <div class="imagem1" data-animate="fade-up">
                 <img class="aimagem" src="Images/imagem1.png" alt="Ilustração do jogo NetWars">
             </div>
 
-            <div class="texto-logo">
+            <div class="texto-logo" data-animate="fade-up">
                 <div class="logo-imagem">
                     <img class="imagem-logo" src="Images/Logo.png" alt="Logo NetWars">
                 </div>
@@ -77,14 +84,14 @@
 
         <section class="objetivos" aria-labelledby="objetivos-titulo">
             <h2 id="objetivos-titulo">OBJETIVOS DO JOGO</h2>
-            <div class="primeiro">
+            <div class="primeiro" data-animate="fade-up">
                 <div class="barra-vertical" aria-hidden="true"></div>
                 <h3>1. Aprender redes de computadores de forma estratégica e divertida</h3>
                 <p>NetWars transforma o conteúdo técnico de redes em uma experiência de jogo envolvente, onde os
                     jogadores <strong>aprendem enquanto competem para dominar a rede.</strong></p>
             </div>
 
-            <div class="segundo">
+            <div class="segundo" data-animate="fade-up">
                 <div class="barra-vertical" aria-hidden="true"></div>
                 <h3>2. Simular a dinâmica de uma rede de computadores</h3>
                 <p>O jogo representa uma rede real, onde <strong>switches são capturados, pacotes são movimentados e
@@ -93,14 +100,14 @@
                     forma prática e divertida.</p>
             </div>
 
-            <div class="terceiro">
+            <div class="terceiro" data-animate="fade-up">
                 <div class="barra-vertical" aria-hidden="true"></div>
                 <h3>3. Desenvolver raciocínio estratégico e tomada de decisão</h3>
                 <p>Durante os turnos, os jogadores devem <strong>reforçar, atacar e se reorganizar de forma inteligente.
                         Isso exige lógica, planejamento e visão tática.</strong></p>
             </div>
 
-            <div class="quarto">
+            <div class="quarto" data-animate="fade-up">
                 <div class="barra-vertical" aria-hidden="true"></div>
                 <h3>4. Aprender jogando com perguntas técnicas</h3>
                 <p>Cada batalha por switches envolve <strong>responder perguntas de redes de computadores.</strong>
@@ -116,14 +123,14 @@
 
         <section class="faq" aria-labelledby="faq-titulo">
             <h2 id="faq-titulo">FAQ</h2>
-            <div class="faq1">
+            <div class="faq1" data-animate="fade-up">
                 <h3>O jogo segue algum conteúdo específico?</h3>
                 <p>Sim! As perguntas são baseadas em conteúdos do curso Cisco NetAcad – Introdução às Redes,
                     garantindo alinhamento com um material de ensino reconhecido.</p>
                 <div class="barra-lateral" aria-hidden="true"></div>
             </div>
 
-            <div class="faq2">
+            <div class="faq2" data-animate="fade-up">
                 <h3>Quem pode jogar?</h3>
                 <p>Estudantes, professores, técnicos, curiosos por redes e qualquer pessoa que queira aprender ou
                     revisar conteúdo de forma divertida. Recomendado para quem está no ensino técnico, superior ou
@@ -131,13 +138,13 @@
                 <div class="barra-lateral" aria-hidden="true"></div>
             </div>
 
-            <div class="faq3">
+            <div class="faq3" data-animate="fade-up">
                 <h3>Posso usar o NetWars em sala de aula?</h3>
                 <p>De 2 a 6 jogadores. Quanto mais gente, mais emocionante fica a disputa pelos switches da rede!</p>
                 <div class="barra-lateral" aria-hidden="true"></div>
             </div>
 
-            <div class="faq4">
+            <div class="faq4" data-animate="fade-up">
                 <h3>Quanto tempo dura uma partida?</h3>
                 <p>Não! O jogo é feito tanto para quem está começando quanto para quem já estuda redes. As perguntas
                     ajudam a aprender jogando, e a competição deixa tudo mais dinâmico.</p>
@@ -151,14 +158,14 @@
             <br>
             Criadores: R. Kauan & E. Filho | Apoio: FAPEMA & IFMA
         </p>
+        <!-- Botão Voltar ao Topo -->
+        <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo da página">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+            </svg>
+        </button>
     </footer>
-
-    <!-- Botão Voltar ao Topo -->
-    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo da página">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-        </svg>
-    </button>
+    </div>
 
     <script src="mobile-navbar.js"></script>
     <script src="main.js"></script>
