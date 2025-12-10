@@ -30,7 +30,6 @@
 /* Responsividade - centralização e espaçamento */
 @media (max-width: 1024px) {
     .menu {
-        flex-wrap: wrap;
         gap: 12px;
         height: auto;
     }
