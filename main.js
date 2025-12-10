@@ -39,7 +39,9 @@ function initSmoothScroll(selector = 'a[href^="#"]') {
 
 function tagContentForAnimation() {
   const targets = document.querySelectorAll(
-    'main h1, main h2, main h3, main p, main img, main li, main blockquote, main .barra-vertical'
+    // Excluir imagens do conjunto que recebem animações automáticas
+    // para evitar que fiquem com `opacity: 0` até a animação ser disparada.
+    'main h1, main h2, main h3, main p, main li, main blockquote, main .barra-vertical'
   );
   targets.forEach((el) => {
     if (!el.dataset.animate) {
