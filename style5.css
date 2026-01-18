@@ -454,6 +454,26 @@ body {
      gap: 20px;
  }
 
+ .logos-rodape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.logos-rodape img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(1.1);
+    transition: transform 0.3s ease;
+}
+
+.logos-rodape img:hover {
+    transform: scale(1.05);
+}
+
  /* Responsividade */
  @media (max-width: 1200px) {
      .regras div {
