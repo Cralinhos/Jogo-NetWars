@@ -1,305 +1,301 @@
-@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
 
 /* Botão Voltar ao Topo */
 .back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: #1B004D;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    box-shadow: 0 4px 12px rgba(27, 0, 77, 0.3);
-    transition: all 0.3s ease;
-    z-index: 1000;
-    opacity: 0;
-    transform: translateY(20px);
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #1b004d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(27, 0, 77, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 /* Responsividade - centralização e espaçamento */
 @media (max-width: 1024px) {
-    .menu {
-        gap: 12px;
-        height: auto;
-    }
+  .menu {
+    gap: 12px;
+    height: auto;
+  }
 
-    .nav-list {
-        gap: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .nav-list {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    .regras h1 {
-        font-size: 56px;
-        padding: 24px 16px;
-    }
+  .regras h1 {
+    font-size: 56px;
+    padding: 24px 16px;
+  }
 
-    .regras h2,
-    .regras p {
-        margin-left: 0;
-        padding: 0 16px;
-        text-align: center;
-    }
+  .regras h2,
+  .regras p {
+    margin-left: 0;
+    padding: 0 16px;
+    text-align: center;
+  }
 
-    .cartas,
-    .peças,
-    .mapa {
-        padding: 30px 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-        min-width: auto;
-    }
+  .cartas,
+  .peças,
+  .mapa {
+    padding: 30px 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: auto;
+  }
 
-    .cartas img,
-    .peças img {
-        max-width: 180px;
-    }
+  .cartas img,
+  .peças img {
+    max-width: 180px;
+  }
 }
 
 @media (max-width: 600px) {
-    .regras h1 {
-        font-size: 42px;
-    }
+  .regras h1 {
+    font-size: 42px;
+  }
 
-    .regras h2 {
-        font-size: 28px;
-    }
+  .regras h2 {
+    font-size: 28px;
+  }
 
-    .regras p {
-        font-size: 18px;
-        line-height: 1.4;
-    }
+  .regras p {
+    font-size: 18px;
+    line-height: 1.4;
+  }
 }
 
 .back-to-top.show {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .back-to-top:hover {
-    background: #2a0066;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(27, 0, 77, 0.4);
+  background: #2a0066;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(27, 0, 77, 0.4);
 }
 
 .back-to-top:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .back-to-top svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 .logos-rodape {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .logos-rodape img {
-    height: 70px;
-    width: auto;
-    object-fit: contain;
-    filter: brightness(1.1);
-    transition: transform 0.3s ease;
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.1);
+  transition: transform 0.3s ease;
 }
 
 .logos-rodape img:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Reset e configurações globais */
 html {
-    height: 100%;
-    overflow: auto;
-    position: relative;
-    scroll-behavior: smooth;
-    scrollbar-gutter: stable;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Inconsolata", monospace;
-    line-height: 1.6;
-    min-height: 100%;
-    overflow: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    position: relative;
-    scrollbar-width: thin;
-    scrollbar-color: #3fe5ff #060911;
-    scroll-behavior: smooth;
+  font-family: "Inconsolata", monospace;
+  line-height: 1.6;
+  min-height: 100%;
+  overflow: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: #3fe5ff #060911;
+  scroll-behavior: smooth;
 }
 
 /* Links */
 a {
-    color: #ffff;
-    text-decoration: none;
-    transition: 0.3s;
+  color: #ffff;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 a:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 /* Header e Navegação */
 .logo .logo-img {
-    width: 150px;
-    height: auto;
+  width: 150px;
+  height: auto;
 }
 
 .menu {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    align-items: center;
-    font-family: "Kdam Thmor Pro", sans-serif;
-    background: #1B004D;
-    height: 12vh;
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  background: #1b004d;
+  height: 12vh;
+  position: relative;
 }
 
 .nav-list {
-    list-style: none;
-    display: flex;
-    align-items: center;
+  list-style: none;
+  display: flex;
+  align-items: center;
 }
 
 .nav-list li {
-    letter-spacing: 3px;
-    margin-left: 32px;
+  letter-spacing: 3px;
+  margin-left: 32px;
 }
 
 .Contato {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: white;
-    color: #1b0049;
-    border-radius: 11px;
-    font-weight: bold;
-    font-size: 16px;
-    border: 1px solid transparent;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: white;
+  color: #1b0049;
+  border-radius: 11px;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .Contato:hover {
-    background-color: #f0f0f0;
-    color: #1b0049;
+  background-color: #f0f0f0;
+  color: #1b0049;
 }
 
 /* Menu Mobile */
 .mobile-menu {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 32px;
-    height: 32px;
-    z-index: 1000;
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  z-index: 1000;
 }
 
 .mobile-menu div {
-    width: 32px;
-    height: 2px;
-    background: #ffff;
-    margin: 2px 0;
-    transition: 0.3s;
+  width: 32px;
+  height: 2px;
+  background: #ffff;
+  margin: 2px 0;
+  transition: 0.3s;
 }
 
 .mobile-menu.active .line1 {
-    transform: rotate(-45deg) translate(-8px, 8px);
+  transform: rotate(-45deg) translate(-8px, 8px);
 }
 
 .mobile-menu.active .line2 {
-    opacity: 0;
+  opacity: 0;
 }
 
 .mobile-menu.active .line3 {
-    transform: rotate(45deg) translate(-5px, -7px);
+  transform: rotate(45deg) translate(-5px, -7px);
 }
 
 /* Overlay do menu mobile */
 .menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
 
 .menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Seção Regras */
 .regras {
-    color: white;
-    background: #0B003A;
-    font-family: "Inconsolata", monospace;
+  color: white;
+  background: #0b003a;
+  font-family: "Inconsolata", monospace;
 }
 
 .regras h1 {
-    font-family: "Lilita One", sans-serif;
-    display: flex;
-    justify-content: center;
-    font-size: 96px;
-    padding: 40px;
-    text-align: center;
+  font-family: "Lilita One", sans-serif;
+  font-size: 96px;
+  padding: 40px;
+  text-align: center;
 }
 
 .regras h2 {
-    text-align: left;
-    margin: 0 auto;
-    max-width: 1200px;
-    font-family: "Kdam Thmor Pro", sans-serif;
-    font-size: 48px;
-    font-weight: 200;
-    margin-bottom: 20px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-size: 48px;
+  font-weight: 200;
+  margin-bottom: 20px;
 }
 
 .regras h3 {
-    font-family: "Kdam Thmor Pro", sans-serif;
-    font-size: 32px;
-    font-weight: 500;
-    margin-bottom: 15px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 15px;
 }
 
 .regras p {
-    margin: 0 auto;
-    font-family: "Inconsolata", monospace;
-    font-size: 25px;
-    font-weight: 200;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    text-align: justify;
+  font-family: "Inconsolata", monospace;
+  font-size: 25px;
+  font-weight: 200;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 /* Estrutura das seções */
@@ -307,1300 +303,1305 @@ a:hover {
 .segundo,
 .terceiro,
 .quarto {
-    position: relative;
-    margin-bottom: 40px;
-    max-width: 1800px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
+  position: relative;
+  margin-bottom: 40px;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  max-width: 1400px;
 }
 
 /* Barra vertical para seção 1 - Objetivo do Jogo (texto curto) */
 .primeiro::before {
-    content: '';
-    position: absolute;
-    top: 14px;
-    left: 40px;
-    width: 2px;
-    height: 700px;
-    background-color: white;
-    border-radius: 3px;
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 0px;
+  width: 2px;
+  height: 700px;
+  background-color: white;
+  border-radius: 3px;
 }
 
 /* Imagens e cartas */
 .cartas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 50px;
-    flex-wrap: wrap;
-    max-width: 100%;
-    overflow-x: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .cartas img {
-    width: 280px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-shrink: 0;
+  width: 280px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  flex-shrink: 0;
 }
 
 .peças img:hover,
 .cartas img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Seções de fundo */
 .bg-1-2 {
-    background: #06001f;
-    padding: 40px 0;
+  background: #06001f;
+  padding: 40px 0;
 }
 
 .aba3 {
-    background: #0B003A;
-    padding: 40px 0;
+  background: #0b003a;
+  padding: 40px 0;
 }
 
 .aba4 {
-    background: #0B003A;
-    padding: 40px 0;
+  background: #0b003a;
+  padding: 40px 0;
 }
 
 /* Footer */
 .rodape-final {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: "Livvic", sans-serif;
-    font-weight: 400;
-    min-height: 13vh;
-    font-size: 26px;
-    text-align: center;
-    background: #1B004D;
-    color: #ffff;
-    padding: 20px;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Livvic", sans-serif;
+  font-weight: 400;
+  min-height: 13vh;
+  font-size: 26px;
+  text-align: center;
+  background: #1b004d;
+  color: #ffff;
+  padding: 20px;
+  gap: 20px;
 }
 
 /* Botão */
 .btn-cartas {
-    text-align: center;
-    width: 457px;
-    height: 41px;
-    border: none;
-    border-radius: 20px;
-    color: white;
-    background-color: #004C75;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    font-family: "Lilita One", sans-serif;
-    font-size: 31px;
-    font-weight: 400;
-    transition: all 0.3s ease;
-    cursor: pointer;
+  text-align: center;
+  width: 457px;
+  height: 41px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color: #004c75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-family: "Lilita One", sans-serif;
+  font-size: 31px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .btn-cartas:hover {
-    background-color: #005a8a;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #005a8a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-cartas a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: inherit;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Responsividade */
 @media (max-width: 1200px) {
-    .regras div {
-        margin-left: 100px;
-        margin-right: 100px;
-    }
+  .regras div {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
 
-    .peças,
-    .cartas {
-        gap: 15px;
-        padding: 40px;
-        min-width: auto;
-    }
+  .peças,
+  .cartas {
+    gap: 15px;
+    padding: 40px;
+    min-width: auto;
+  }
 
-    .peças img,
-    .cartas img {
-        width: 220px;
-    }
+  .peças img,
+  .cartas img {
+    width: 220px;
+  }
 
-    .btn-cartas {
-        width: 80%;
-        max-width: 400px;
-        font-size: 24px;
-    }
+  .btn-cartas {
+    width: 80%;
+    max-width: 400px;
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 999px) {
-    .nav-list {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh;
-        background: #1B004D;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 100px;
-        transform: translateX(100%);
-        transition: all 0.3s ease-in-out;
-        z-index: 1000;
-        opacity: 0;
-        visibility: hidden;
-        overflow-y: auto;
-    }
+  .nav-list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: #1b004d;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 100px;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+  }
 
-    .nav-list.active {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-    }
+  .nav-list.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
 
-    .nav-list li {
-        margin: 12px 0;
-        opacity: 0;
-        transform: translateX(50px);
-        transition: all 0.3s ease-in-out;
-    }
+  .nav-list li {
+    margin: 12px 0;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.3s ease-in-out;
+  }
 
-    .nav-list.active li {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  .nav-list.active li {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
-    .nav-list li a {
-        font-size: 16px;
-        padding: 12px 15px;
-        display: block;
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
+  .nav-list li a {
+    font-size: 16px;
+    padding: 12px 15px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
 
-    .nav-list li a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
+  .nav-list li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 
-    .nav-list li:last-child a {
-        border-bottom: none;
-    }
+  .nav-list li:last-child a {
+    border-bottom: none;
+  }
 
-    .mobile-menu {
-        display: flex;
-    }
+  .mobile-menu {
+    display: flex;
+  }
 
-    .regras h1 {
-        font-size: 56px;
-        padding: 20px;
-    }
+  .regras h1 {
+    font-size: 56px;
+    padding: 20px;
+  }
 
-    .regras h2 {
-        font-size: 28px;
-        text-align: center;
-        margin-left: 0;
-    }
+  .regras h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-left: 0;
+  }
 
-    .regras h3 {
-        font-size: 24px;
-        text-align: center;
-    }
+  .regras h3 {
+    font-size: 24px;
+    text-align: center;
+  }
 
-    .regras p {
-        font-size: 18px;
-        text-align: center;
-        margin-left: 0;
-    }
+  .regras p {
+    font-size: 18px;
+    text-align: center;
+    margin-left: 0;
+  }
 
-    .regras div {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
+  .regras div {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 
-    .primeiro::before,
-    .segundo::before,
-    .terceiro::before,
-    .quarto::before {
-        display: none;
-    }
+  .primeiro::before,
+  .segundo::before,
+  .terceiro::before,
+  .quarto::before {
+    display: none;
+  }
 
-    .peças,
-    .cartas {
-        padding: 30px 20px;
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-        min-width: auto;
-    }
+  .peças,
+  .cartas {
+    padding: 30px 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: auto;
+  }
 
-    .peças img,
-    .cartas img {
-        width: 180px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
+  .peças img,
+  .cartas img {
+    width: 180px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
 
-    .peças img:hover,
-    .cartas img:hover {
-        transform: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
+  .peças img:hover,
+  .cartas img:hover {
+    transform: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
 
-    .ahaha li {
-        font-size: 20px;
-        margin-left: 0;
-        text-align: center;
-    }
+  .ahaha li {
+    font-size: 20px;
+    margin-left: 0;
+    text-align: center;
+  }
 
-    .ahaha li::before {
-        display: none;
-    }
+  .ahaha li::before {
+    display: none;
+  }
 
-    .rodape-final {
-        font-size: 20px;
-        padding: 20px;
-        height: auto;
-        min-height: 13vh;
-    }
+  .rodape-final {
+    font-size: 20px;
+    padding: 20px;
+    height: auto;
+    min-height: 13vh;
+  }
 
-    .btn-cartas {
-        width: 90%;
-        max-width: 350px;
-        font-size: 20px;
-        height: 50px;
-    }
+  .btn-cartas {
+    width: 90%;
+    max-width: 350px;
+    font-size: 20px;
+    height: 50px;
+  }
 }
 
 @media (max-width: 768px) {
-    .regras div {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
+  .regras div {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 
-    .peças,
-    .cartas {
-        gap: 10px;
-        padding: 20px 15px;
-    }
+  .peças,
+  .cartas {
+    gap: 10px;
+    padding: 20px 15px;
+  }
 
-    .peças img,
-    .cartas img {
-        width: 150px;
-    }
+  .peças img,
+  .cartas img {
+    width: 150px;
+  }
 
-    .btn-cartas {
-        width: 95%;
-        max-width: 300px;
-        font-size: 18px;
-        height: 45px;
-    }
+  .btn-cartas {
+    width: 95%;
+    max-width: 300px;
+    font-size: 18px;
+    height: 45px;
+  }
 }
 
 @media (max-width: 480px) {
-    .regras h1 {
-        font-size: 40px;
-    }
+  .regras h1 {
+    font-size: 40px;
+  }
 
-    .regras h2 {
-        font-size: 24px;
-    }
+  .regras h2 {
+    font-size: 24px;
+  }
 
-    .regras h3 {
-        font-size: 20px;
-    }
+  .regras h3 {
+    font-size: 20px;
+  }
 
-    .regras p {
-        font-size: 16px;
-        text-align: justify;
-    }
+  .regras p {
+    font-size: 16px;
+    text-align: justify;
+  }
 
-    .peças,
-    .cartas {
-        gap: 8px;
-        padding: 15px 10px;
-    }
+  .peças,
+  .cartas {
+    gap: 8px;
+    padding: 15px 10px;
+  }
 
-    .peças img,
-    .cartas img {
-        width: 120px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    }
+  .peças img,
+  .cartas img {
+    width: 120px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
 
-    .ahaha li {
-        font-size: 18px;
-    }
+  .ahaha li {
+    font-size: 18px;
+  }
 
-    .rodape-final {
-        font-size: 16px;
-    }
+  .rodape-final {
+    font-size: 16px;
+  }
 
-    .btn-cartas {
-        width: 95%;
-        max-width: 280px;
-        font-size: 16px;
-        height: 40px;
-    }
+  .btn-cartas {
+    width: 95%;
+    max-width: 280px;
+    font-size: 16px;
+    height: 40px;
+  }
 }
 
 /* Escala para notebooks – aproxima experiência de zoom 67% */
 @media (min-width: 1000px) and (max-width: 1600px) {
-    body {
-        zoom: 0.67;
-    }
+  body {
+    zoom: 0.67;
+  }
 }
 
 /* Fallback para navegadores sem suporte a zoom (ex.: Firefox) */
 @supports not (zoom: 1) {
-    @media (min-width: 1000px) and (max-width: 1600px) {
-        body {
-            transform: scale(0.67);
-            transform-origin: top left;
-            width: 100vw;
-            max-width: 149.2537313433vw; /* 1 / 0.67 */
-        }
+  @media (min-width: 1000px) and (max-width: 1600px) {
+    body {
+      transform: scale(0.67);
+      transform-origin: top left;
+      width: 100vw;
+      max-width: 149.2537313433vw; /* 1 / 0.67 */
     }
+  }
 }
 
 /* Otimizações específicas para telas ultrawide (2340 x 1080) */
 @media (min-width: 2000px) and (max-width: 2500px) {
-    body {
-        font-size: 18px;
-        line-height: 1.7;
-    }
-    
-    /* Header otimizado para telas ultrawide */
-    .menu {
-        height: 10vh;
-        padding: 15px 40px;
-    }
-    
-    .logo .logo-img {
-        width: 180px;
-    }
-    
-    .nav-list li {
-        margin-left: 40px;
-        font-size: 18px;
-        letter-spacing: 4px;
-    }
-    
-    .Contato {
-        padding: 12px 24px;
-        font-size: 18px;
-        border-radius: 12px;
-    }
-    
-    /* Seção Cartas otimizada */
-    .cartas h1 {
-        font-size: 120px;
-        padding: 50px;
-        margin-bottom: 20px;
-    }
-    
-    .cartas h2 {
-        font-size: 56px;
-        margin-bottom: 25px;
-    }
-    
-    .cartas h3 {
-        font-size: 38px;
-        margin-bottom: 20px;
-    }
-    
-    .cartas p {
-        font-size: 28px;
-        line-height: 1.6;
-        margin-bottom: 25px;
-        max-width: 1600px;
-    }
-    
-    .cartas div {
-        margin-left: 300px;
-        margin-right: 300px;
-        margin-bottom: 50px;
-        max-width: 1800px;
-    }
-    
-    /* Seções de cartas otimizadas */
-    .peças,
-    .cartas {
-        gap: 30px;
-        padding: 80px;
-        max-width: 2000px;
-        margin: 0 auto;
-    }
-    
-    .peças img {
-        width: 200px;
-    }
-    
-    .cartas img {
-        width: 350px;
-    }
-    
-    /* Melhor espaçamento para hover */
-    .peças img:hover,
-    .cartas img:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-    }
-    
-    /* Rodapé otimizado */
-    .rodape-final {
-        font-size: 30px;
-        padding: 30px;
-        min-height: 15vh;
-    }
-    
-    /* Botão otimizado */
-    .btn-cartas {
-        width: 500px;
-        height: 60px;
-        font-size: 28px;
-        border-radius: 30px;
-    }
+  body {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  /* Header otimizado para telas ultrawide */
+  .menu {
+    height: 10vh;
+    padding: 15px 40px;
+  }
+
+  .logo .logo-img {
+    width: 180px;
+  }
+
+  .nav-list li {
+    margin-left: 40px;
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+
+  .Contato {
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 12px;
+  }
+
+  /* Seção Cartas otimizada */
+  .cartas h1 {
+    font-size: 120px;
+    padding: 50px;
+    margin-bottom: 20px;
+  }
+
+  .cartas h2 {
+    font-size: 56px;
+    margin-bottom: 25px;
+  }
+
+  .cartas h3 {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+
+  .cartas p {
+    font-size: 28px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 1600px;
+  }
+
+  .cartas div {
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 50px;
+    max-width: 1800px;
+  }
+
+  /* Seções de cartas otimizadas */
+  .peças,
+  .cartas {
+    gap: 30px;
+    padding: 80px;
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+
+  .peças img {
+    width: 200px;
+  }
+
+  .cartas img {
+    width: 350px;
+  }
+
+  /* Melhor espaçamento para hover */
+  .peças img:hover,
+  .cartas img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Rodapé otimizado */
+  .rodape-final {
+    font-size: 30px;
+    padding: 30px;
+    min-height: 15vh;
+  }
+
+  /* Botão otimizado */
+  .btn-cartas {
+    width: 500px;
+    height: 60px;
+    font-size: 28px;
+    border-radius: 30px;
+  }
 }
 
 /* Otimizações para telas muito grandes (acima de 2500px) */
 @media (min-width: 2500px) {
-    body {
-        font-size: 20px;
-        line-height: 1.8;
-    }
-    
-    /* Header para telas muito grandes */
-    .menu {
-        height: 8vh;
-        padding: 20px 60px;
-    }
-    
-    .logo .logo-img {
-        width: 200px;
-    }
-    
-    .nav-list li {
-        margin-left: 50px;
-        font-size: 20px;
-        letter-spacing: 5px;
-    }
-    
-    .Contato {
-        padding: 15px 30px;
-        font-size: 20px;
-        border-radius: 15px;
-    }
-    
-    /* Seção Cartas para telas muito grandes */
-    .cartas h1 {
-        font-size: 140px;
-        padding: 60px;
-        margin-bottom: 30px;
-    }
-    
-    .cartas h2 {
-        font-size: 64px;
-        margin-bottom: 30px;
-    }
-    
-    .cartas h3 {
-        font-size: 42px;
-        margin-bottom: 25px;
-    }
-    
-    .cartas p {
-        font-size: 32px;
-        line-height: 1.7;
-        margin-bottom: 30px;
-        max-width: 2000px;
-    }
-    
-    .cartas div {
-        margin-left: 400px;
-        margin-right: 400px;
-        margin-bottom: 60px;
-        max-width: 2200px;
-    }
-    
-    /* Seções de cartas para telas muito grandes */
-    .peças,
-    .cartas {
-        gap: 40px;
-        padding: 100px;
-        max-width: 2500px;
-        margin: 0 auto;
-    }
-    
-    .peças img {
-        width: 250px;
-    }
-    
-    .cartas img {
-        width: 400px;
-    }
-    
-    /* Efeitos hover aprimorados */
-    .peças img:hover,
-    .cartas img:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-    }
-    
-    /* Rodapé para telas muito grandes */
-    .rodape-final {
-        font-size: 36px;
-        padding: 40px;
-        min-height: 18vh;
-    }
-    
-    /* Botão para telas muito grandes */
-    .btn-cartas {
-        width: 600px;
-        height: 70px;
-        font-size: 32px;
-        border-radius: 35px;
-    }
+  body {
+    font-size: 20px;
+    line-height: 1.8;
+  }
+
+  /* Header para telas muito grandes */
+  .menu {
+    height: 8vh;
+    padding: 20px 60px;
+  }
+
+  .logo .logo-img {
+    width: 200px;
+  }
+
+  .nav-list li {
+    margin-left: 50px;
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+
+  .Contato {
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 15px;
+  }
+
+  /* Seção Cartas para telas muito grandes */
+  .cartas h1 {
+    font-size: 140px;
+    padding: 60px;
+    margin-bottom: 30px;
+  }
+
+  .cartas h2 {
+    font-size: 64px;
+    margin-bottom: 30px;
+  }
+
+  .cartas h3 {
+    font-size: 42px;
+    margin-bottom: 25px;
+  }
+
+  .cartas p {
+    font-size: 32px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 2000px;
+  }
+
+  .cartas div {
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 60px;
+    max-width: 2200px;
+  }
+
+  /* Seções de cartas para telas muito grandes */
+  .peças,
+  .cartas {
+    gap: 40px;
+    padding: 100px;
+    max-width: 2500px;
+    margin: 0 auto;
+  }
+
+  .peças img {
+    width: 250px;
+  }
+
+  .cartas img {
+    width: 400px;
+  }
+
+  /* Efeitos hover aprimorados */
+  .peças img:hover,
+  .cartas img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Rodapé para telas muito grandes */
+  .rodape-final {
+    font-size: 36px;
+    padding: 40px;
+    min-height: 18vh;
+  }
+
+  /* Botão para telas muito grandes */
+  .btn-cartas {
+    width: 600px;
+    height: 70px;
+    font-size: 32px;
+    border-radius: 35px;
+  }
 }
 
 /* Regras específicas para telas pequenas (≤480px) */
 @media (max-width: 480px) {
-    /* Otimizações específicas para o menu mobile em telas pequenas */
-    .nav-list {
-        justify-content: flex-start;
-        padding-top: 80px;
-        height: 100vh;
-        overflow-y: auto;
-    }
+  /* Otimizações específicas para o menu mobile em telas pequenas */
+  .nav-list {
+    justify-content: flex-start;
+    padding-top: 80px;
+    height: 100vh;
+    overflow-y: auto;
+  }
 
-    .nav-list li {
-        margin: 8px 0;
-    }
+  .nav-list li {
+    margin: 8px 0;
+  }
 
-    .nav-list li a {
-        font-size: 14px;
-        padding: 10px 12px;
-    }
+  .nav-list li a {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
 }
 
 /* Regras específicas para telas muito pequenas (320px x 560px) */
 @media (max-width: 360px) {
-    .nav-list {
-        padding-top: 60px;
-        justify-content: flex-start;
-    }
+  .nav-list {
+    padding-top: 60px;
+    justify-content: flex-start;
+  }
 
-    .nav-list li {
-        margin: 6px 0;
-    }
+  .nav-list li {
+    margin: 6px 0;
+  }
 
-    .nav-list li a {
-        font-size: 13px;
-        padding: 8px 10px;
-    }
+  .nav-list li a {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
 
-    .mobile-menu {
-        width: 24px;
-        height: 24px;
-    }
+  .mobile-menu {
+    width: 24px;
+    height: 24px;
+  }
 
-    .mobile-menu div {
-        width: 24px;
-        height: 2px;
-    }
+  .mobile-menu div {
+    width: 24px;
+    height: 2px;
+  }
 
-    .menu {
-        height: 10vh;
-        padding: 10px 15px;
-    }
+  .menu {
+    height: 10vh;
+    padding: 10px 15px;
+  }
 
-    .logo .logo-img {
-        width: 100px;
-    }
+  .logo .logo-img {
+    width: 100px;
+  }
 }
 
 /* Regras específicas para telas com altura limitada */
 @media (max-height: 600px) {
-    .nav-list {
-        justify-content: flex-start;
-    }
+  .nav-list {
+    justify-content: flex-start;
+  }
 
-    .nav-list li {
-        margin: 4px 0;
-    }
+  .nav-list li {
+    margin: 4px 0;
+  }
 
-    .nav-list li a {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
+  .nav-list li a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
 }
 
 /* Regras específicas para dispositivos com tela muito pequena e altura limitada */
 @media (max-width: 360px) and (max-height: 600px) {
-    .nav-list {
-        padding-top: 30px;
-    }
+  .nav-list {
+    padding-top: 30px;
+  }
 
-    .nav-list li {
-        margin: 10px 0;
-    }
+  .nav-list li {
+    margin: 10px 0;
+  }
 
-    .nav-list li a {
-        font-size: 15px;
-        padding: 6px 10px;
-    }
+  .nav-list li a {
+    font-size: 15px;
+    padding: 6px 10px;
+  }
 }
 
 /* Carrossel automático para telas menores */
 @media (max-width: 768px) {
-    .cartas,
-    .peças {
-        position: relative;
-        overflow: visible;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 350px;
-        padding: 0 !important;
-        margin: 0 !important;
-        z-index: 1;
-        pointer-events: auto;
-        box-sizing: border-box;
-        width: 100%;
-    }
+  .cartas,
+  .peças {
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 1;
+    pointer-events: auto;
+    box-sizing: border-box;
+    width: 100%;
+  }
 
-    .cartas-container,
-    .peças-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 250px;
-        overflow: visible;
-        pointer-events: auto;
-        touch-action: pan-y;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        left: -8%; /* Aumentado para dispositivos como Redmi Note 8 */
-    }
+  .cartas-container,
+  .peças-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    overflow: visible;
+    pointer-events: auto;
+    touch-action: pan-y;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    left: -8%; /* Aumentado para dispositivos como Redmi Note 8 */
+  }
 
-    .cartas img,
-    .peças img {
-        position: absolute;
-        min-width: 180px;
-        max-width: 180px;
-        height: auto;
-        cursor: pointer;
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        opacity: 0;
-        z-index: 1;
-        filter: brightness(0.7);
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) translateX(0);
-        margin: 0;
-        padding: 0;
-    }
+  .cartas img,
+  .peças img {
+    position: absolute;
+    min-width: 180px;
+    max-width: 180px;
+    height: auto;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    z-index: 1;
+    filter: brightness(0.7);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateX(0);
+    margin: 0;
+    padding: 0;
+  }
 
-    .cartas img.active,
-    .peças img.active {
-        opacity: 1;
-        transform: translate(-50%, -50%) translateX(0);
-        z-index: 2;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        filter: brightness(1);
-        left: 50% !important;
-        top: 50% !important;
-    }
+  .cartas img.active,
+  .peças img.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateX(0);
+    z-index: 2;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    filter: brightness(1);
+    left: 50% !important;
+    top: 50% !important;
+  }
 
-    .cartas img.prev,
-    .peças img.prev {
-        transform: translate(-50%, -50%) translateX(-120px);
-        opacity: 0.4;
-        filter: brightness(0.6);
-    }
+  .cartas img.prev,
+  .peças img.prev {
+    transform: translate(-50%, -50%) translateX(-120px);
+    opacity: 0.4;
+    filter: brightness(0.6);
+  }
 
-    .cartas img.next,
-    .peças img.next {
-        transform: translate(-50%, -50%) translateX(120px);
-        opacity: 0.4;
-        filter: brightness(0.6);
-    }
+  .cartas img.next,
+  .peças img.next {
+    transform: translate(-50%, -50%) translateX(120px);
+    opacity: 0.4;
+    filter: brightness(0.6);
+  }
 
-    /* Indicadores do carrossel - OCULTOS */
-    .carousel-indicators {
-        display: none !important;
-    }
+  /* Indicadores do carrossel - OCULTOS */
+  .carousel-indicators {
+    display: none !important;
+  }
 
-    .carousel-indicator {
-        display: none !important;
-    }
+  .carousel-indicator {
+    display: none !important;
+  }
 
-    /* Controles do carrossel - OCULTOS */
-    .carousel-controls {
-        display: none !important;
-    }
+  /* Controles do carrossel - OCULTOS */
+  .carousel-controls {
+    display: none !important;
+  }
 
-    .carousel-btn {
-        display: none !important;
-    }
+  .carousel-btn {
+    display: none !important;
+  }
 
-    /* Modal para ampliar imagem */
-    .image-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 10000;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        overflow: hidden;
-        touch-action: manipulation;
-    }
+  /* Modal para ampliar imagem */
+  .image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+    touch-action: manipulation;
+  }
 
-    .image-modal.active {
-        display: flex;
-        opacity: 1;
-    }
+  .image-modal.active {
+    display: flex;
+    opacity: 1;
+  }
 
-    .modal-content {
-        position: relative;
-        max-width: 90%;
-        max-height: 90%;
-        text-align: center;
-    }
+  .modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+  }
 
-    .modal-image {
-        max-width: 100%;
-        max-height: 100%;
-        border-radius: 8px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        touch-action: manipulation;
-    }
+  .modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    touch-action: manipulation;
+  }
 
-    .modal-close {
-        position: absolute;
-        top: -40px;
-        right: 0;
-        background: rgba(255, 255, 255, 0.2);
-        border: none;
-        color: white;
-        font-size: 24px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        min-width: 44px;
-        min-height: 44px;
-    }
+  .modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 44px;
+    min-height: 44px;
+  }
 
-    .modal-close:hover {
-        background: rgba(255, 255, 255, 0.3);
-        transform: scale(1.1);
-    }
+  .modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+  }
 
-    /* Pausar animação quando usuário interage */
-    .cartas.paused .cartas-container,
-    .peças.paused .peças-container {
-        animation-play-state: paused;
-    }
+  /* Pausar animação quando usuário interage */
+  .cartas.paused .cartas-container,
+  .peças.paused .peças-container {
+    animation-play-state: paused;
+  }
 
-    /* Mensagem informativa do carrossel - OCULTA */
-    .carousel-info {
-        display: none !important;
-    }
-    
-    /* Melhorias para dispositivos móveis */
-    .image-modal {
-        touch-action: manipulation;
-    }
-    
-    .modal-close {
-        top: 10px;
-        right: 10px;
-        font-size: 30px;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .modal-content {
-        max-width: 95%;
-        max-height: 95%;
-    }
+  /* Mensagem informativa do carrossel - OCULTA */
+  .carousel-info {
+    display: none !important;
+  }
+
+  /* Melhorias para dispositivos móveis */
+  .image-modal {
+    touch-action: manipulation;
+  }
+
+  .modal-close {
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-content {
+    max-width: 95%;
+    max-height: 95%;
+  }
 }
 
 /* Carrossel para telas muito pequenas */
 @media (max-width: 480px) {
-    .cartas,
-    .peças {
-        height: 300px;
-    }
+  .cartas,
+  .peças {
+    height: 300px;
+  }
 
-    .cartas-container,
-    .peças-container {
-        height: 200px;
-        left: -10%; /* Ajuste específico para telas muito pequenas */
-    }
+  .cartas-container,
+  .peças-container {
+    height: 200px;
+    left: -10%; /* Ajuste específico para telas muito pequenas */
+  }
 
-    .cartas img,
-    .peças img {
-        min-width: 140px;
-        max-width: 140px;
-    }
+  .cartas img,
+  .peças img {
+    min-width: 140px;
+    max-width: 140px;
+  }
 
-    .cartas img.prev,
-    .peças img.prev {
-        transform: translate(-50%, -50%) translateX(-90px);
-    }
+  .cartas img.prev,
+  .peças img.prev {
+    transform: translate(-50%, -50%) translateX(-90px);
+  }
 
-    .cartas img.next,
-    .peças img.next {
-        transform: translate(-50%, -50%) translateX(90px);
-    }
+  .cartas img.next,
+  .peças img.next {
+    transform: translate(-50%, -50%) translateX(90px);
+  }
 
-    .carousel-btn {
-        padding: 6px 12px;
-        font-size: 12px;
-    }
+  .carousel-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
 
-    .carousel-indicator {
-        display: none !important;
-    }
+  .carousel-indicator {
+    display: none !important;
+  }
 
-    .carousel-info {
-        display: none !important;
-    }
+  .carousel-info {
+    display: none !important;
+  }
 }
 
 /* Ajuste específico para dispositivos como Redmi Note 8 */
 @media (min-width: 400px) and (max-width: 500px) {
-    .cartas-container,
-    .peças-container {
-        left: -12%; /* Ajuste específico para Redmi Note 8 */
-    }
-    
-    .cartas img.active,
-    .peças img.active {
-        left: 48% !important; /* Ajuste fino para centralização */
-    }
+  .cartas-container,
+  .peças-container {
+    left: -12%; /* Ajuste específico para Redmi Note 8 */
+  }
+
+  .cartas img.active,
+  .peças img.active {
+    left: 48% !important; /* Ajuste fino para centralização */
+  }
 }
 
 /* ===== MEDIA QUERIES ESPECÍFICAS PARA IPHONE 6/7/8 PLUS ===== */
 /* iPhone 6/7/8 Plus: 414px × 736px */
 @media only screen and (min-width: 414px) and (max-width: 414px) and (min-height: 736px) and (max-height: 736px) {
-    /* Otimizações para o carrossel no iPhone Plus */
-    .cartas,
-    .peças {
-        height: 350px;
-        margin: 20px 0;
-    }
+  /* Otimizações para o carrossel no iPhone Plus */
+  .cartas,
+  .peças {
+    height: 350px;
+    margin: 20px 0;
+  }
 
-    .cartas-container,
-    .peças-container {
-        height: 250px;
-        left: -8%;
-    }
+  .cartas-container,
+  .peças-container {
+    height: 250px;
+    left: -8%;
+  }
 
-    .cartas img,
-    .peças img {
-        min-width: 160px;
-        max-width: 160px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
+  .cartas img,
+  .peças img {
+    min-width: 160px;
+    max-width: 160px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
 
-    .cartas img.active,
-    .peças img.active {
-        left: 50% !important;
-        transform: translate(-50%, -50%) scale(1.1);
-        z-index: 10;
-    }
+  .cartas img.active,
+  .peças img.active {
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(1.1);
+    z-index: 10;
+  }
 
-    .cartas img.prev,
-    .peças img.prev {
-        transform: translate(-50%, -50%) translateX(-100px) scale(0.9);
-        opacity: 0.7;
-    }
+  .cartas img.prev,
+  .peças img.prev {
+    transform: translate(-50%, -50%) translateX(-100px) scale(0.9);
+    opacity: 0.7;
+  }
 
-    .cartas img.next,
-    .peças img.next {
-        transform: translate(-50%, -50%) translateX(100px) scale(0.9);
-        opacity: 0.7;
-    }
+  .cartas img.next,
+  .peças img.next {
+    transform: translate(-50%, -50%) translateX(100px) scale(0.9);
+    opacity: 0.7;
+  }
 
-    .cartas img.prev2,
-    .peças img.prev2 {
-        transform: translate(-50%, -50%) translateX(-180px) scale(0.8);
-        opacity: 0.5;
-    }
+  .cartas img.prev2,
+  .peças img.prev2 {
+    transform: translate(-50%, -50%) translateX(-180px) scale(0.8);
+    opacity: 0.5;
+  }
 
-    .cartas img.next2,
-    .peças img.next2 {
-        transform: translate(-50%, -50%) translateX(180px) scale(0.8);
-        opacity: 0.5;
-    }
+  .cartas img.next2,
+  .peças img.next2 {
+    transform: translate(-50%, -50%) translateX(180px) scale(0.8);
+    opacity: 0.5;
+  }
 
-    /* Botões do carrossel otimizados para iPhone Plus */
-    .carousel-btn {
-        padding: 12px 20px;
-        font-size: 16px;
-        border-radius: 25px;
-        background: rgba(27, 0, 77, 0.9);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        color: white;
-        font-weight: 600;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        transition: all 0.3s ease;
-    }
+  /* Botões do carrossel otimizados para iPhone Plus */
+  .carousel-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    background: rgba(27, 0, 77, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
 
-    .carousel-btn:hover {
-        background: rgba(27, 0, 77, 1);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-    }
+  .carousel-btn:hover {
+    background: rgba(27, 0, 77, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  }
 
-    .carousel-btn:active {
-        transform: translateY(0);
-    }
+  .carousel-btn:active {
+    transform: translateY(0);
+  }
 
-    /* Títulos das seções otimizados */
-    .cartas h2,
-    .peças h2 {
-        font-size: 32px;
-        margin: 30px 0 20px;
-        text-align: center;
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+  /* Títulos das seções otimizados */
+  .cartas h2,
+  .peças h2 {
+    font-size: 32px;
+    margin: 30px 0 20px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
 
-    /* Modal otimizado para iPhone Plus */
-    .image-modal {
-        padding: 20px;
-    }
+  /* Modal otimizado para iPhone Plus */
+  .image-modal {
+    padding: 20px;
+  }
 
-    .modal-content {
-        max-width: 90%;
-        max-height: 90%;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
+  .modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
 
-    .modal-close {
-        top: 15px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
-        font-size: 28px;
-        background: rgba(0, 0, 0, 0.7);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-    }
+  .modal-close {
+    top: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 28px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
 
-    /* Indicadores do carrossel otimizados para iPhone Plus */
-    .carousel-indicator {
-        display: block !important;
-        margin: 20px auto;
-        text-align: center;
-    }
+  /* Indicadores do carrossel otimizados para iPhone Plus */
+  .carousel-indicator {
+    display: block !important;
+    margin: 20px auto;
+    text-align: center;
+  }
 
-    .carousel-indicator span {
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.5);
-        margin: 0 6px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
+  .carousel-indicator span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
-    .carousel-indicator span.active {
-        background: rgba(255, 255, 255, 1);
-        transform: scale(1.2);
-    }
+  .carousel-indicator span.active {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.2);
+  }
 
-    .carousel-indicator span:hover {
-        background: rgba(255, 255, 255, 0.8);
-        transform: scale(1.1);
-    }
+  .carousel-indicator span:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+  }
 
-    /* Informações do carrossel otimizadas para iPhone Plus */
-    .carousel-info {
-        display: block !important;
-        font-size: 16px;
-        margin-top: 15px;
-        padding: 0 20px;
-        line-height: 1.5;
-        text-align: center;
-        color: rgba(255, 255, 255, 0.9);
-    }
+  /* Informações do carrossel otimizadas para iPhone Plus */
+  .carousel-info {
+    display: block !important;
+    font-size: 16px;
+    margin-top: 15px;
+    padding: 0 20px;
+    line-height: 1.5;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+  }
 
-    .carousel-info strong {
-        color: white;
-        font-weight: 600;
-    }
+  .carousel-info strong {
+    color: white;
+    font-weight: 600;
+  }
 
-    /* Melhorias de acessibilidade para iPhone Plus */
-    .carousel-btn:focus {
-        outline: 3px solid rgba(255, 255, 255, 0.5);
-        outline-offset: 2px;
-    }
+  /* Melhorias de acessibilidade para iPhone Plus */
+  .carousel-btn:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+  }
 
-    .cartas img:focus,
-    .peças img:focus {
-        outline: 3px solid rgba(255, 255, 255, 0.7);
-        outline-offset: 3px;
-    }
+  .cartas img:focus,
+  .peças img:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 3px;
+  }
 
-    .carousel-indicator span:focus {
-        outline: 2px solid rgba(255, 255, 255, 0.7);
-        outline-offset: 2px;
-    }
+  .carousel-indicator span:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 2px;
+  }
 
-    /* Otimizações de performance para iPhone Plus */
-    .cartas img,
-    .peças img {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
+  /* Otimizações de performance para iPhone Plus */
+  .cartas img,
+  .peças img {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
 
-    /* Ajustes de espaçamento para melhor usabilidade */
-    .cartas,
-    .peças {
-        margin: 25px 0;
-        padding: 0 10px;
-    }
+  /* Ajustes de espaçamento para melhor usabilidade */
+  .cartas,
+  .peças {
+    margin: 25px 0;
+    padding: 0 10px;
+  }
 
-    /* Melhor contraste para elementos interativos */
-    .carousel-btn {
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    }
+  /* Melhor contraste para elementos interativos */
+  .carousel-btn {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
 
-    /* Otimizações específicas para o estilo 3 */
-    .cartas-container,
-    .peças-container {
-        animation-duration: 20s;
-        animation-timing-function: linear;
-    }
+  /* Otimizações específicas para o estilo 3 */
+  .cartas-container,
+  .peças-container {
+    animation-duration: 20s;
+    animation-timing-function: linear;
+  }
 
-    .cartas.paused .cartas-container,
-    .peças.paused .peças-container {
-        animation-play-state: paused;
-    }
+  .cartas.paused .cartas-container,
+  .peças.paused .peças-container {
+    animation-play-state: paused;
+  }
 }
 
 /* ===== MEDIA QUERIES PARA IPHONE 6/7/8 PLUS EM ORIENTAÇÃO LANDSCAPE ===== */
 @media only screen and (min-width: 736px) and (max-width: 736px) and (min-height: 414px) and (max-height: 414px) {
-    /* Carrossel otimizado para landscape no iPhone Plus */
-    .cartas,
-    .peças {
-        height: 280px;
-        margin: 15px 0;
-    }
+  /* Carrossel otimizado para landscape no iPhone Plus */
+  .cartas,
+  .peças {
+    height: 280px;
+    margin: 15px 0;
+  }
 
-    .cartas-container,
-    .peças-container {
-        height: 200px;
-        left: -5%;
-    }
+  .cartas-container,
+  .peças-container {
+    height: 200px;
+    left: -5%;
+  }
 
-    .cartas img,
-    .peças img {
-        min-width: 140px;
-        max-width: 140px;
-        border-radius: 10px;
-    }
+  .cartas img,
+  .peças img {
+    min-width: 140px;
+    max-width: 140px;
+    border-radius: 10px;
+  }
 
-    .cartas img.active,
-    .peças img.active {
-        left: 50% !important;
-        transform: translate(-50%, -50%) scale(1.05);
-    }
+  .cartas img.active,
+  .peças img.active {
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
 
-    .cartas img.prev,
-    .peças img.prev {
-        transform: translate(-50%, -50%) translateX(-80px) scale(0.9);
-    }
+  .cartas img.prev,
+  .peças img.prev {
+    transform: translate(-50%, -50%) translateX(-80px) scale(0.9);
+  }
 
-    .cartas img.next,
-    .peças img.next {
-        transform: translate(-50%, -50%) translateX(80px) scale(0.9);
-    }
+  .cartas img.next,
+  .peças img.next {
+    transform: translate(-50%, -50%) translateX(80px) scale(0.9);
+  }
 
-    .cartas img.prev2,
-    .peças img.prev2 {
-        transform: translate(-50%, -50%) translateX(-150px) scale(0.8);
-    }
+  .cartas img.prev2,
+  .peças img.prev2 {
+    transform: translate(-50%, -50%) translateX(-150px) scale(0.8);
+  }
 
-    .cartas img.next2,
-    .peças img.next2 {
-        transform: translate(-50%, -50%) translateX(150px) scale(0.8);
-    }
+  .cartas img.next2,
+  .peças img.next2 {
+    transform: translate(-50%, -50%) translateX(150px) scale(0.8);
+  }
 
-    /* Botões landscape */
-    .carousel-btn {
-        padding: 10px 18px;
-        font-size: 14px;
-        border-radius: 20px;
-    }
+  /* Botões landscape */
+  .carousel-btn {
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
 
-    /* Títulos landscape */
-    .cartas h2,
-    .peças h2 {
-        font-size: 28px;
-        margin: 20px 0 15px;
-    }
+  /* Títulos landscape */
+  .cartas h2,
+  .peças h2 {
+    font-size: 28px;
+    margin: 20px 0 15px;
+  }
 
-    /* Modal landscape */
-    .modal-content {
-        max-width: 85%;
-        max-height: 85%;
-    }
+  /* Modal landscape */
+  .modal-content {
+    max-width: 85%;
+    max-height: 85%;
+  }
 
-    .modal-close {
-        top: 10px;
-        right: 10px;
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
-    }
+  .modal-close {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
 
-    /* Indicadores landscape */
-    .carousel-indicator {
-        margin: 15px auto;
-    }
+  /* Indicadores landscape */
+  .carousel-indicator {
+    margin: 15px auto;
+  }
 
-    .carousel-indicator span {
-        width: 10px;
-        height: 10px;
-        margin: 0 5px;
-    }
+  .carousel-indicator span {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+  }
 
-    /* Informações landscape */
-    .carousel-info {
-        font-size: 14px;
-        margin-top: 12px;
-        padding: 0 15px;
-    }
+  /* Informações landscape */
+  .carousel-info {
+    font-size: 14px;
+    margin-top: 12px;
+    padding: 0 15px;
+  }
 }
 
 /* ===== MEDIA QUERIES PARA IPHONE 6/7/8 PLUS COM DENSIDADE DE PIXEL ALTA ===== */
 @media only screen and (min-width: 414px) and (max-width: 414px) and (min-height: 736px) and (max-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
-    /* Otimizações para telas Retina no carrossel */
-    .cartas img,
-    .peças img {
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-    }
+  /* Otimizações para telas Retina no carrossel */
+  .cartas img,
+  .peças img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
 
-    /* Melhor renderização de fontes para telas Retina */
-    .cartas h2,
-    .peças h2,
-    .carousel-btn,
-    .carousel-info {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-    }
+  /* Melhor renderização de fontes para telas Retina */
+  .cartas h2,
+  .peças h2,
+  .carousel-btn,
+  .carousel-info {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 
-    /* Ajustes de sombra para telas Retina */
-    .cartas img,
-    .peças img {
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    }
+  /* Ajustes de sombra para telas Retina */
+  .cartas img,
+  .peças img {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
 
-    .carousel-btn {
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    }
+  .carousel-btn {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
 }
 
 /* ===== MEDIA QUERIES PARA IPHONE 6/7/8 PLUS COM SUPORTE A SAFARI ===== */
 @supports (-webkit-touch-callout: none) {
-    @media only screen and (min-width: 414px) and (max-width: 414px) and (min-height: 736px) and (max-height: 736px) {
-        /* Otimizações específicas para Safari no iOS no carrossel */
-        .cartas-container,
-        .peças-container {
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-        }
-
-        /* Melhor suporte para viewport do Safari no carrossel */
-        .cartas img.active,
-        .peças img.active {
-            -webkit-transform: translate(-50%, -50%) scale(1.1);
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-
-        /* Otimizações de scroll para Safari no carrossel */
-        .cartas,
-        .peças {
-            -webkit-overflow-scrolling: touch;
-        }
-
-        /* Melhor suporte para elementos fixos no Safari no carrossel */
-        .carousel-btn {
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-        }
+  @media only screen and (min-width: 414px) and (max-width: 414px) and (min-height: 736px) and (max-height: 736px) {
+    /* Otimizações específicas para Safari no iOS no carrossel */
+    .cartas-container,
+    .peças-container {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }
+
+    /* Melhor suporte para viewport do Safari no carrossel */
+    .cartas img.active,
+    .peças img.active {
+      -webkit-transform: translate(-50%, -50%) scale(1.1);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    /* Otimizações de scroll para Safari no carrossel */
+    .cartas,
+    .peças {
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Melhor suporte para elementos fixos no Safari no carrossel */
+    .carousel-btn {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+  }
 }
 
 /* ===== Scroll suave e barra personalizada ===== */
 /* Webkit (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
-    width: 12px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #060911;
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.45);
+  background: #060911;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.45);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #3fe5ff 0%, #6f45ff 100%);
-    border: 2px solid #060911;
-    border-radius: 12px;
-    box-shadow:
-        0 0 10px rgba(63, 229, 255, 0.35),
-        0 0 18px rgba(111, 69, 255, 0.28);
-    transition: background 200ms ease, box-shadow 200ms ease;
+  background: linear-gradient(180deg, #3fe5ff 0%, #6f45ff 100%);
+  border: 2px solid #060911;
+  border-radius: 12px;
+  box-shadow:
+    0 0 10px rgba(63, 229, 255, 0.35),
+    0 0 18px rgba(111, 69, 255, 0.28);
+  transition:
+    background 200ms ease,
+    box-shadow 200ms ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #5df0ff 0%, #8a62ff 100%);
-    box-shadow:
-        0 0 14px rgba(93, 240, 255, 0.45),
-        0 0 22px rgba(138, 98, 255, 0.35);
+  background: linear-gradient(180deg, #5df0ff 0%, #8a62ff 100%);
+  box-shadow:
+    0 0 14px rgba(93, 240, 255, 0.45),
+    0 0 22px rgba(138, 98, 255, 0.35);
 }

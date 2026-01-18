@@ -572,8 +572,6 @@ a:hover {
 
 .regras h1 {
     font-family: "Lilita One", sans-serif;
-    display: flex;
-    justify-content: center;
     font-size: 96px;
     padding: 40px;
     text-align: center;
